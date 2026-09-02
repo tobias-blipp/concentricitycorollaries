@@ -16,7 +16,6 @@
   ],
 
   "objects": [
-    { "decl": "ASection.concentricity",                          "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "the theorem" },
     { "decl": "ASection.sweepTransitive_on_residueSystem",       "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "lem:c-residue-transitive" },
     { "decl": "ASection.AsectionCResidueDiagram",                "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "the C-residue inverse-image diagram" },
     { "decl": "ASection.AsectionCResidueInclusion",              "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "iota_A, componentwise" },
@@ -27,7 +26,23 @@
     { "decl": "ASection.residueTotal_isConnected",               "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "" },
     { "decl": "ASection.residueTotal_pi0_singleton",             "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "" },
     { "decl": "ASection.transportLevel",                         "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "the level read" },
-    { "decl": "zeta_riemannHypothesis",                          "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "cor:rh" },
+
+    { "decl": "ASection.residueTotal_pi0_colimit_singleton",     "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "thm:residue-total-singleton (ii)" },
+    { "decl": "ASection.residueInputTotalTransportRead_certified","kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "thm:residue-total-singleton (iii)" },
+    { "decl": "ASection.transportLevel_eq_sphereZero_re",         "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "thm:residue-total-singleton (iii)" },
+    { "decl": "ASection.residueActionState_mem",                  "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "certified membership of the enumerated representatives" },
+    { "decl": "ConcentricASection",                               "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "prop:read-equivalence (a); synchronized 2026-09-02" },
+    { "decl": "PairwiseTransportLevel",                           "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "prop:read-equivalence (b); synchronized 2026-09-02" },
+    { "decl": "concentricASection_iff_pairwiseTransportLevel",    "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "prop:read-equivalence; synchronized 2026-09-02" },
+    { "decl": "SpecCandidate.candidateSection",                   "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "prop:countermodel; installed 2026-09-02 from the analysis countermodel" },
+    { "decl": "SpecCandidate.candidateSection_not_concentric",    "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "prop:countermodel" },
+    { "decl": "SpecCandidate.current_ASection_concentricity_type_false", "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "prop:countermodel: the universal statement is false" },
+    { "decl": "SpecCandidate.candidateSection_not_pairwiseTransportLevel", "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "prop:countermodel" },
+    { "decl": "zetaSection_concentric_iff_RH",                    "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "thm:zeta-concentricity-rh (a); replaces cor:rh, 2026-09-02" },
+    { "decl": "zetaSection_pairwiseTransportLevel_iff_RH",        "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "thm:zeta-concentricity-rh (b)" },
+    { "decl": "zetaSection_sphereZero_re_eq_half_of_RH",          "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "thm:zeta-concentricity-rh (c)" },
+    { "decl": "zetaSection_transportLevel_eq_half_of_RH",         "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "thm:zeta-concentricity-rh (c)" },
+    { "decl": "zeta_criticalLine_zeros_infinite_of_RH",           "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "thm:zeta-concentricity-rh (c), conditional form" },
 
     { "decl": "GreatCircle.Base",                                "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "def:base — the projective base groupoid" },
     { "decl": "GreatCircle.orbitRep_spec",                       "kind": "AUTHOR_OBJECT", "status": "PROPOSED", "note": "" },
@@ -44,6 +59,11 @@
   ],
 
   "retired": [
-    { "decl": "ASection.concentricity_transport", "note": "re-badged 2026-07-05, file retired; label lives on ASection.concentricity", "status": "PROPOSED" }
+    { "decl": "ASection.concentricity_transport", "note": "re-badged 2026-07-05, file retired; label lived on ASection.concentricity until 2026-09-02", "status": "PROPOSED" },
+    { "decl": "ASection.concentricity", "note": "withdrawn 2026-09-02: the universal statement is false at ASection (SpecCandidate.current_ASection_concentricity_type_false); it carried sorryAx through residueTotal_transportLevel_singleton", "status": "PROPOSED" },
+    { "decl": "ASection.residueTotal_transportLevel_singleton", "note": "withdrawn 2026-09-02: the admitted pairwise read equality (the repository's only sorry); RH-equivalent for zetaSection", "status": "PROPOSED" },
+    { "decl": "ASection.nontrivial_one_centre", "note": "withdrawn 2026-09-02 with ASection.concentricity; master cor:nontrivial became rmk:nontrivial", "status": "PROPOSED" },
+    { "decl": "zeta_riemannHypothesis", "note": "withdrawn 2026-09-02: unconditional RH corollary of the false universal theorem; replaced by zetaSection_concentric_iff_RH (master thm:zeta-concentricity-rh)", "status": "PROPOSED" },
+    { "decl": "zeta_criticalLine_zeros_infinite", "note": "withdrawn 2026-09-02; conditional form zeta_criticalLine_zeros_infinite_of_RH retained; master thm:hardy is cited, not formalized", "status": "PROPOSED" }
   ]
 }

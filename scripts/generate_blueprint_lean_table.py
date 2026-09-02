@@ -121,7 +121,7 @@ def find_declaration_line(path: Path, declaration: str) -> int:
         return 0
     needle = declaration.rsplit(".", 1)[-1]
     pattern = re.compile(
-        rf"^(?:noncomputable\s+)?(?:def|abbrev|theorem|lemma|instance|structure|class)\s+(?:[A-Za-z0-9_.]+\.)?{re.escape(needle)}\b"
+        rf"^(?:@\[[^\]]*\]\s*)*(?:noncomputable\s+)?(?:def|abbrev|theorem|lemma|instance|structure|class)\s+(?:[A-Za-z0-9_.]+\.)?{re.escape(needle)}\b"
     )
     for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
         if pattern.search(line):
@@ -342,10 +342,7 @@ def main() -> int:
         block, master_line = master_block(master, row["master"])
         semantic_link = bool(block) and row["declaration"] in block
         diagnostic_seen = bool(row["diagnostic"]) and row["diagnostic"] in production_probe.stdout
-        if row["master"] == "cor:rh":
-            status = "WAITING_ON_OPEN_SEATS"
-        else:
-            status = "OPEN_SEAT" if semantic_link and diagnostic_seen else "UNLOCATED_OPEN_SEAT"
+        status = "OPEN_SEAT" if semantic_link and diagnostic_seen else "UNLOCATED_OPEN_SEAT"
         open_rows.append(
             {
                 **row,
@@ -714,7 +711,7 @@ def main() -> int:
     lines.extend(
         [
             "",
-            "The current production run reaches exactly two errors: the north existential in `sweepTransitive_on_residueSystem` and the real-valued equality in `concentricity`. The inference table above is independently green against the exact current source prefix; the open seats do not downgrade those receipts.",
+            "Since 2026-09-02 the production sources contain no `sorry`: the former universal theorem `ASection.concentricity` and its admitted read equality were withdrawn (the universal statement is false, `SpecCandidate.current_ASection_concentricity_type_false`), and the headline surface is the zeta-specific equivalence in `Concentricity/Corollaries.lean`. Any open rows above therefore describe manifest entries that no longer correspond to production seats and should be retired from the manifest.",
             "",
             "## Exact checked types",
             "",

@@ -215,14 +215,14 @@ answers which statement is the author's call, not the tool's. Since
 | `lem:c-residue-transitive` | For an A-section $A$, the total inverse-image groupoid \[ _{ B} R_A \] | `ASection.CResidueInputFiberHom` | `—` | TAGGED |
 | `lem:c-residue-transitive` | For an A-section $A$, the total inverse-image groupoid \[ _{ B} R_A \] | `ASection.CResidueInputTotal_transitive` | `—` | TAGGED |
 | `lem:c-residue-transitive` | For an A-section $A$, the total inverse-image groupoid \[ _{ B} R_A \] | `ASection.sweepTransitive_on_residueSystem` | `—` | TAGGED |
-| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.sweepTransitive_on_residueSystem` | `—` | TAGGED |
-| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.residueTotal_isConnected` | `—` | TAGGED |
-| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.residueTotal_pi0_singleton` | `—` | TAGGED |
-| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.residueTotal_pi0_colimit_singleton` | `—` | TAGGED |
-| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.residueInputTotalTransportRead_certified` | `—` | TAGGED |
-| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.transportLevel_eq_sphereZero_re` | `—` | TAGGED |
-| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.transportLevel` | `—` | TAGGED |
-| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.residueActionState_mem` | `—` | TAGGED |
+| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.sweepTransitive_on_residueSystem` | `residueTotalCategory` | TAGGED |
+| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.residueTotal_isConnected` | `residueTotalCategory` | TAGGED |
+| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.residueTotal_pi0_singleton` | `residueTotalCategory` | TAGGED |
+| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.residueTotal_pi0_colimit_singleton` | `residueTotalCategory` | TAGGED |
+| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.residueInputTotalTransportRead_certified` | `residueTotalCategory` | TAGGED |
+| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.transportLevel_eq_sphereZero_re` | `residueTotalCategory` | TAGGED |
+| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.transportLevel` | `residueTotalCategory` | TAGGED |
+| `thm:residue-total-singleton` | Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C- | `ASection.residueActionState_mem` | `residueTotalCategory` | TAGGED |
 | `prop:read-equivalence` | For an A-section $A$ the following are equivalent: {enumerate}[leftmar | `ConcentricASection` | `—` | TAGGED |
 | `prop:read-equivalence` | For an A-section $A$ the following are equivalent: {enumerate}[leftmar | `PairwiseTransportLevel` | `—` | TAGGED |
 | `prop:read-equivalence` | For an A-section $A$ the following are equivalent: {enumerate}[leftmar | `concentricASection_iff_pairwiseTransportLevel` | `—` | TAGGED |

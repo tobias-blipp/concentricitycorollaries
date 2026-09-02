@@ -985,42 +985,42 @@ END
 
 CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
 CERTIFIEDAT ASection.sweepTransitive_on_residueSystem
-OBJECT sweepTransitive_on_residueSystem
+OBJECT residueTotalCategory
 END
 
 CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
 CERTIFIEDAT ASection.residueTotal_isConnected
-OBJECT residueTotal_isConnected
+OBJECT residueTotalCategory
 END
 
 CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
 CERTIFIEDAT ASection.residueTotal_pi0_singleton
-OBJECT residueTotal_pi0_singleton
+OBJECT residueTotalCategory
 END
 
 CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
 CERTIFIEDAT ASection.residueTotal_pi0_colimit_singleton
-OBJECT residueTotal_pi0_colimit_singleton
+OBJECT residueTotalCategory
 END
 
 CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
 CERTIFIEDAT ASection.residueInputTotalTransportRead_certified
-OBJECT residueInputTotalTransportRead_certified
+OBJECT residueTotalCategory
 END
 
 CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
 CERTIFIEDAT ASection.transportLevel_eq_sphereZero_re
-OBJECT transportLevel_eq_sphereZero_re
+OBJECT residueTotalCategory
 END
 
 CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
 CERTIFIEDAT ASection.transportLevel
-OBJECT transportLevel
+OBJECT residueTotalCategory
 END
 
 CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
 CERTIFIEDAT ASection.residueActionState_mem
-OBJECT residueActionState_mem
+OBJECT residueTotalCategory
 END
 
 CLAIM [prop:read-equivalence] For an A-section $A$ the following are equivalent: {enumerate}[leftmargin=2.4em] [(a)] the

@@ -16,12 +16,14 @@ noncomputable section
 
 open scoped OnePoint
 
-/-- **The compactified classical zeta** (master `def:zeta-Cstar`, verbatim):
-"ζ_ℂ* : ℂ* → ℂ* is the meromorphic continuation of ζ regarded as a map to
-the Riemann sphere: ζ_ℂ*(s) = ζ(s) for s ∈ ℂ∖{1}; ζ_ℂ*(1) = ∞ (the simple
-pole, Theorem thm:riemann); and ζ_ℂ*(∞) = 1, since ζ(s) → 1 as Re(s) → +∞
-(the p-test: only the n = 1 term of Σ_n n^{-s} survives). It is holomorphic
-into ℂ* on ℂ*∖{1}, its sole pole being s = 1."
+/-- **The compactified classical zeta** (master `def:zeta-Cstar`, as corrected
+2026-09-02): "ζ_ℂ* : ℂ* → ℂ* is the meromorphic continuation of ζ regarded as
+a map to the Riemann sphere: ζ_ℂ*(s) = ζ(s) for s ∈ ℂ∖{1}; ζ_ℂ*(1) = ∞ (the
+simple pole, Theorem thm:riemann); and ζ_ℂ*(∞) = 1, a conventional value at
+the adjoined domain point.  On the finite plane ζ_ℂ* is holomorphic into ℂ*
+on ℂ∖{1}, its sole pole being s = 1.  It is not continuous at the domain point
+∞, and no continuous extension exists there."  (The earlier quoted clause
+"holomorphic into ℂ* on ℂ*∖{1}" was false and was withdrawn.)
 
 Rendered on Mathlib's `OnePoint ℂ` (the master's own Lean pointer for the
 one-point compactification, `rmk:G2-compact`), over Mathlib's `riemannZeta`

@@ -45,7 +45,7 @@ def ownership():
         status[row["decl"]] = row.get("status", "PROPOSED")
     return kinds, status
 
-DECL_KW = r"(?:noncomputable\s+)?(?:private\s+|protected\s+)?(?:theorem|lemma|def|instance|abbrev|structure)"
+DECL_KW = r"(?:@\[[^\]]*\]\s*)*(?:noncomputable\s+)?(?:private\s+|protected\s+)?(?:theorem|lemma|def|instance|abbrev|structure)"
 
 
 def sh(cmd: str) -> str:
