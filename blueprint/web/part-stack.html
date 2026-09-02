@@ -14,7 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Categorical Construction and the Concentricity Question</title>
 <link rel="prev" href="sect0002.html" title="Slice-Preserving Theory, the Ring R, and the Equivalence" />
-<link rel="up" href="index.html" title="Concentric Zero-Spheres of a class of sections of the commutative ring R of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a concentricity statement" />
+<link rel="up" href="index.html" title="Concentricity of Zero-Spheres for a class of sections of the commutative ring R of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a concentricity statement" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 <link rel="stylesheet" href="styles/showmore.css" />
@@ -25,7 +25,7 @@
 <body>
 <header>
 <svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
-<h1 id="doc_title"><a href="index.html">Concentric Zero-Spheres of a class of sections of the commutative ring \(\mathcal R\) of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a concentricity statement</a></h1>
+<h1 id="doc_title"><a href="index.html">Concentricity of Zero-Spheres for a class of sections of the commutative ring \(\mathcal R\) of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a concentricity statement</a></h1>
 </header>
 
 <div class="wrapper">
@@ -103,7 +103,7 @@
   </ul>
  </li>
 <li class="">
-  <a href="part-stack.html#sec:detector"><span class="toc_ref">10</span> <span class="toc_entry">The concentricity theorem</span></a>
+  <a href="part-stack.html#sec:detector"><span class="toc_ref">10</span> <span class="toc_entry">The concentricity question</span></a>
  </li>
 <li class="">
   <a href="part-stack.html#sec:verification"><span class="toc_ref">11</span> <span class="toc_entry">Corollaries</span></a>
@@ -290,7 +290,7 @@
 
   </div>
 </div>
-<p>Condition <span class="upshape">C4</span>, infinitely many residue-\(\mathbb {C}\) zeros, matches the class to its infinite structure (the infinite Euler family of <span class="upshape">C2</span>, the infinite Weierstrass divisor of <span class="upshape">C3</span>) and gives the collapse its force: the degenerate fibre of the transport is an infinite family, so that whether it lies in one connected component of \(\mathcal T_A\) (Definition&#160;<a href="part-stack.html#eq:orbit-stabilizer">9.4</a>) is an infinite alignment. Theorem&#160;<a href="part-stack.html#thm:residue-total-singleton">10.7</a> decides the component question affirmatively for the C-residue total; the alignment of the real reads is the separate question of Proposition&#160;<a href="part-stack.html#prop:read-equivalence">10.8</a>. </p>
+<p>Condition <span class="upshape">C4</span>, infinitely many residue-\(\mathbb {C}\) zeros, matches the class to its infinite structure (the infinite Euler family of <span class="upshape">C2</span>, the infinite Weierstrass divisor of <span class="upshape">C3</span>) and gives the collapse its force: the degenerate fibre of the transport is an infinite family, so that whether it lies in one connected component of \(\mathcal T_A\) (Definition&#160;<a href="part-stack.html#eq:orbit-stabilizer">9.4</a>) is a question about infinitely many states at once. Theorem&#160;<a href="part-stack.html#thm:residue-total-singleton">10.7</a> answers it affirmatively for the C-residue total. That is a statement about components; whether the infinitely many real reads align is the separate question of Proposition&#160;<a href="part-stack.html#prop:read-equivalence">10.8</a>, and for a general A-section the answer is no (Proposition&#160;<a href="part-stack.html#prop:countermodel">10.9</a>). </p>
 <h2 id="a0000000020">Two geometric viewpoints</h2>
 <div class="definition_thmwrapper theorem-style-definition" id="def:two-worlds">
   <div class="definition_thmheading">
@@ -773,9 +773,9 @@
 
   </div>
 </div>
-<h1 id="sec:detector">10 The concentricity theorem</h1>
+<h1 id="sec:detector">10 The concentricity question</h1>
 
-<p>We now have the worlds and the base, so this section defines the class of functions precisely and proves the theorem. Two facts about slice-preserving functions come first: the Weierstrass factorization that gives condition C3 its meaning, and the fact that a residue-\(\mathbb {C}\) zero is a whole \(6\)-sphere, a single connected component of the octonionic world. Then the categorical engine, Riehl’s computation of the components of a Grothendieck construction as a colimit, which sorts the assembled total into the classes linked by the section’s real-value transports. With these in hand we define an A-section by its four conditions C1–C4, prove that the C-residue total of any A-section is transitive with a singleton component colimit, identify exactly what that singleton does and does not give, and exhibit an A-section whose zero-spheres are not concentric. </p>
+<p>We now have the worlds and the base, so this section defines the class of functions precisely, proves what the categorical construction establishes about it, and records what it does not. Two facts about slice-preserving functions come first: the Weierstrass factorization that gives condition C3 its meaning, and the fact that a residue-\(\mathbb {C}\) zero is a whole \(6\)-sphere, a single connected component of the octonionic world. Then the categorical engine, Riehl’s computation of the components of a Grothendieck construction as a colimit, which sorts the assembled total into the classes linked by the section’s real-value transports. With these in hand we define an A-section by its four conditions C1–C4, prove that the C-residue total of any A-section is transitive with a singleton component colimit, identify exactly what that singleton does and does not give, and exhibit an A-section whose zero-spheres are not concentric. </p>
 <div class="proposition_thmwrapper theorem-style-plain" id="prop:weierstrass">
   <div class="proposition_thmheading">
     <span class="proposition_thmcaption">
@@ -1452,7 +1452,7 @@
   \[  (g^{-1}\fatsemi k)\fatsemi h: P.\mathrm{base}\longrightarrow Q.\mathrm{base}. \tag {G}\label{eq:residue-total-base-arrow}  \]
 </div>
 <p> A morphism \(P\to Q\) of \(\int _{\mathcal B}\mathcal A_A\) is a base arrow \(f:P.\mathrm{base}\to Q.\mathrm{base}\) together with a fibre arrow \(\mathcal A_A(f)(P.\mathrm{fiber})\to Q.\mathrm{fiber}\). Functoriality gives \(\mathcal A_A\bigl((g^{-1}\fatsemi k)\fatsemi h\bigr) =\mathcal A_A(h)\circ \mathcal A_A(k)\circ \mathcal A_A(g^{-1})\), and \(\mathcal A_A(g^{-1})(P.\mathrm{fiber})=x_N\) by <a href="part-stack.html#eq:residue-total-base-arrow" class="eqref">10.6</a>. So the composite carries \(P.\mathrm{fiber}\) back along \(g^{-1}\) to \(x_N\); then <a href="part-stack.html#eq:residue-total-base-arrow" class="eqref">10.6</a> carries the result along \(k\) to \(y_N\); finally \(\mathcal A_A(h)\) carries that arrow forward to \(Q.\mathrm{fiber}\), with <a href="part-stack.html#eq:residue-total-base-arrow" class="eqref">10.6</a> identifying its two ends. This fibre arrow over <a href="part-stack.html#eq:residue-total-base-arrow" class="eqref">10.6</a> is a morphism from \(P\) to \(Q\) in the ambient Grothendieck construction. Since \(\iota _A\) is full it has a preimage in the residue total \(\int \mathcal R_A\), and faithfulness makes that preimage unique. Hence \(P\) and \(Q\) are joined. Since they were arbitrary, \(\int \mathcal R_A\) is transitive. </p>
-<p>Throughout the calculation \(z_1\) and \(z_2\) are arbitrary C3 coordinates. Their common real value is extracted from the singleton colimit in the next step. The comparison above rests on the relative stabilizer cancellation through the single common source tape and north frame. </p>
+<p>Throughout the calculation \(z_1\) and \(z_2\) are arbitrary C3 coordinates. Whether they carry one common real value is a separate question; the singleton colimit of the next step identifies their component classes, not their coordinates (Theorem&#160;<a href="part-stack.html#thm:residue-total-singleton">10.7</a>, Proposition&#160;<a href="part-stack.html#prop:read-equivalence">10.8</a>). The comparison above rests on the relative stabilizer cancellation through the single common source tape and north frame. </p>
 
   </div>
 </div>
@@ -1628,7 +1628,7 @@
   \[  \text{[commutative diagram -- see the PDF / the master file]} \]
 </div>
 <p> <span class="upshape">(</span><span class="ttfamily">AsectionCResidueInclusionTotal</span> in the Lean source, the Grothendieck functoriality of \(\iota _A\) applied to it<span class="upshape">)</span>. On objects it sends \((X,x)\) to \((X,\iota _{A,X}x)\) and leaves the base position unchanged; on a Grothendieck morphism it leaves the base arrow unchanged and applies the fibre inclusion only to the compatible transport. Consequently equality after inclusion forces equality of the base legs and, by fibrewise faithfulness, equality of the transport legs: the total inclusion is faithful. Conversely, an ambient total morphism between two objects in the image already has a base leg \(f\) and a fibre morphism between selected target states; fibrewise fullness gives its preimage in \(\mathcal R_A\), with the same \(f\). Hence the total inclusion is full <span class="upshape">(</span><span class="ttfamily">AsectionCResidueInclusionTotal_full</span> and <span class="ttfamily">AsectionCResidueInclusionTotal_faithful</span><span class="upshape">)</span>. It is therefore an isomorphism onto its image. The C-residue total is that image itself: it consists exactly of the selected objects together with the fixed tape and all ambient total morphisms between them. </p>
-<p>Lemma&#160;<a href="part-stack.html#eq:residue-total-base-arrow">10.6</a> proves, in this exact inverse-image groupoid, that any two objects are joined by one Grothendieck morphism: the relative orbit–stabilizer face is its base component and the \(G_2\) transport is its fibre component. Thus \(\int _{\mathcal B}\mathcal R_A\) is connected. This is a groupoid-register statement: at this stage the established conclusion is connectedness; equality of real coordinates and the common centre arise from the colimit readout below. </p>
+<p>Lemma&#160;<a href="part-stack.html#eq:residue-total-base-arrow">10.6</a> proves, in this exact inverse-image groupoid, that any two objects are joined by one Grothendieck morphism: the relative orbit–stabilizer face is its base component and the \(G_2\) transport is its fibre component. Thus \(\int _{\mathcal B}\mathcal R_A\) is connected. This is a groupoid-register statement: the established conclusion is connectedness. Equality of real coordinates does not follow from it, and the colimit readout below does not supply it. </p>
 <p>By Remark&#160;8.3.5 of <span class="cite">
 	[
 	<a href="part-stack.html#Riehl" >23</a>
@@ -1962,7 +1962,7 @@
   <li><p><b class="bfseries">(C4)</b> <em>Infinitely many residue-\(\mathbb {C}\) zeros.</em> Classical fact: \(\zeta \) has infinitely many nontrivial zeros (Corollary&#160;<a href="sect0001.html#cor:hadamard-infinitude">1.4</a>; also Hardy, Theorem&#160;<a href="sect0001.html#thm:hardy">1.5</a>). By the residue dictionary below these are exactly the residue-\(\mathbb {C}\) zeros, so \(\{ q_n\} \) is infinite. </p>
 </li>
 </ul>
-<p> After the <span class="upshape">(C1)–(C4)</span> verification, the downstream centre-pinning uses the <em>functional equation</em> \(\xi (s)=\xi (1-s)\), \(\xi (\bar s)=\overline{\xi (s)}\) (Theorem&#160;<a href="sect0001.html#thm:riemann">1.1</a>), used in Theorem&#160;<a href="part-stack.html#thm:zeta-concentricity-rh">11.2</a>. The <em>residue dictionary</em>, a closed zero of \(\zeta _{\mathbb {O}^{*}}\) is a real point (residue field \(\mathbb {R}\), the classically <em>trivial</em> zeros) or a \(6\)-sphere \(S_{(\sigma ,\gamma )}\) (residue field \(\mathbb {C}\), the classically <em>nontrivial</em> zeros), is the slice-regular zero-geometry of Theorem&#160;<a href="sect0002.html#thm:zero-spheres">8.2</a> and <span class="cite">
+<p> After the <span class="upshape">(C1)–(C4)</span> verification, the downstream identification of the common centre as \(\tfrac 12\), under the Riemann Hypothesis, uses the <em>functional equation</em> \(\xi (s)=\xi (1-s)\), \(\xi (\bar s)=\overline{\xi (s)}\) (Theorem&#160;<a href="sect0001.html#thm:riemann">1.1</a>), used in Theorem&#160;<a href="part-stack.html#thm:zeta-concentricity-rh">11.2</a>. The <em>residue dictionary</em>, a closed zero of \(\zeta _{\mathbb {O}^{*}}\) is a real point (residue field \(\mathbb {R}\), the classically <em>trivial</em> zeros) or a \(6\)-sphere \(S_{(\sigma ,\gamma )}\) (residue field \(\mathbb {C}\), the classically <em>nontrivial</em> zeros), is the slice-regular zero-geometry of Theorem&#160;<a href="sect0002.html#thm:zero-spheres">8.2</a> and <span class="cite">
 	[
 	<a href="part-stack.html#AdF" >1</a>
 	]
@@ -2248,7 +2248,7 @@
 
   <a href="sect0002.html" title="Slice-Preserving Theory, the Ring \(\mathcal R\), and the Equivalence"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="index.html" title="Concentric Zero-Spheres of a class of sections of the commutative ring \(\mathcal R\) of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a concentricity statement"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="index.html" title="Concentricity of Zero-Spheres for a class of sections of the commutative ring \(\mathcal R\) of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a concentricity statement"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
 </nav>
 

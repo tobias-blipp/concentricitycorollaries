@@ -1,12 +1,14 @@
 /-
 Concentricity/Theorem.lean
 
-The π₀ lemma (master `lem:pi0-grothendieck`) and the statement of the
-Concentricity Theorem (master `thm:concentricity`).
+The π₀ lemma (master `lem:pi0-grothendieck`), the transitivity, connectedness,
+and singleton-component results for the C-residue total (master
+`thm:residue-total-singleton`, formerly `thm:concentricity`), and the clean
+read interface (master `prop:read-equivalence`).
 
-The statement layer STOPS here: the proof of `thm:concentricity` — the
-C1–C4 assembly, including the placement sentence (landed in the master
-2026-07-03, the author's alone) — is Phase 4.
+Historical note: until 2026-09-02 this file's endpoint was the universal
+Concentricity Theorem, whose proof (the C1–C4 assembly and the placement
+sentence, landed in the master 2026-07-03) was "Phase 4".
 
 STATUS 2026-09-02 (synchronized to the analysis record, TASK-0004): this
 file contains ZERO sorries.  The transitivity, connectedness, and

@@ -1,6 +1,9 @@
 import Concentricity
 
 -- GREEN_LEDGER kernel pass, 2026-07-11: one #print axioms per ledger row.
+-- 2026-09-02: rows naming declarations that no longer exist are commented out
+-- so this file elaborates against the synchronized tree; the headline rows
+-- were retargeted to the zeta-specific surface (see AGENTS.md, STATUS 2026-09-02).
 
 -- G₂ action layer
 #print axioms G2.smul_one
@@ -11,8 +14,8 @@ import Concentricity
 #print axioms ASection.realize_mem_sliceSphere
 #print axioms ASection.realize_equivariant
 -- GPV transport (Recovery.lean)
-#print axioms ASection.GpvTransport.lift_exp
-#print axioms ASection.GpvTransport.winding
+-- #print axioms ASection.GpvTransport.lift_exp  -- (2026-09-02) declaration no longer exists in Concentricity/; row retained as history
+-- #print axioms ASection.GpvTransport.winding  -- (2026-09-02) declaration no longer exists in Concentricity/; row retained as history
 -- Winding bridges (SigmaE3.lean)
 #print axioms crossing_height_odd_of_neg
 #print axioms crossing_band_ledger
@@ -29,10 +32,10 @@ import Concentricity
 #print axioms pi0_grothendieck
 #print axioms toColimitObj_eq_of_zigzag
 -- The current readout chain (ConcentricityReadout.lean / AFunctor.lean)
-#print axioms ASection.functorA
-#print axioms ASection.readout
-#print axioms ASection.totalA_pi0_singleton
-#print axioms ASection.zero_levels_common
+-- #print axioms ASection.functorA  -- (2026-09-02) declaration no longer exists in Concentricity/; row retained as history
+-- #print axioms ASection.readout  -- (2026-09-02) declaration no longer exists in Concentricity/; row retained as history
+-- #print axioms ASection.totalA_pi0_singleton  -- (2026-09-02) declaration no longer exists in Concentricity/; row retained as history
+-- #print axioms ASection.zero_levels_common  -- (2026-09-02) declaration no longer exists in Concentricity/; row retained as history
 -- The C-residue total (Theorem.lean), synchronized 2026-09-02: the former
 -- `ASection.concentricity` was withdrawn; these are the clean structural rows.
 #print axioms ASection.sweepTransitive_on_residueSystem

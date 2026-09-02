@@ -97,7 +97,7 @@
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{example}[theorem]{Example}
 
-\title{Concentric Zero-Spheres of a class of sections of the commutative ring $\mathcal R$\\ of slice preserving functions
+\title{Concentricity of Zero-Spheres for a class of sections of the commutative ring $\mathcal R$\\ of slice preserving functions
 over the compactified Octonions\\[0.4em]
 \large
 with the Riemann Hypothesis as a concentricity statement}
@@ -140,8 +140,8 @@ slice-regular Weierstrass factorization whose spherical factors are the residue-
 \textup{(C4)} infinitely many such zeros. The question is whether the residue-$\CC$ zero
 $6$-spheres of such an $A$ are concentric.
 
-The tool is a concentricity detector built from the section itself, out of groupoids,
-orbit--stabilizer, and categorical homotopy theory. Conditions \textup{(C1)--(C3)} determine one
+The tool, designed as a concentricity detector, is built from the section itself, out of
+groupoids, orbit--stabilizer, and categorical homotopy theory; what it detects is connectedness. Conditions \textup{(C1)--(C3)} determine one
 distinguished exponential M\"obius action on the projective base
 $\mathcal B=PGL(2,\RR)\ltimes\operatorname{OnePoint}(\RR)$: a logarithmic coordinate $z$ is
 exponentiated in the diagonal matrix $\operatorname{diag}(e^z,1)$ and conjugated into the Cayley
@@ -186,7 +186,7 @@ A nontrivial zero of the zeta function, seen from the complex line alone, is a l
 
 The paper is built to make that convergence visible and, at every step, checkable. Part 1 recalls the classical facts about the Riemann zeta function we will lean on. Part 2 develops the slice-preserving theory of functions on the octonions, builds the commutative ring $\mathcal R$ in which the octonionic zeta lives, and proves the reframing at the centre of everything: the classically nontrivial zeros are exactly the residue-$\CC$ zero six-spheres, and the Riemann Hypothesis holds precisely when those spheres are concentric. Part 3 builds a small piece of machinery I think of as a concentricity detector, and reports exactly what it detects. From the section itself we build one distinguished action on a projective base, carry it across a continuum of Riemann spheres by orbit and stabilizer, and read off, through categorical homotopy theory, that the zero-sphere states land in a single connected piece. That is proved. What it does not give is agreement of the real reads carried by those states: the class of sections considered contains a member whose zero-spheres are not concentric, so no argument at this generality can. For the octonionic zeta, agreement of the reads is equivalent to the Riemann Hypothesis, and under the Riemann Hypothesis the common centre is one half.
 
-No one can picture an eight-dimensional graph in their head, but tools from categorical homotopy theory, like the total-object Grothendieck construction and standard colimit arguments, let us probe this structure and reason about it. The argument is also formalized in Lean, so that each step can be checked; the reader can verify each step, and see exactly where the connected component ends and the Riemann Hypothesis begins.
+No one can picture an eight-dimensional graph in their head, but tools from categorical homotopy theory, like the total-object Grothendieck construction and standard colimit arguments, let us probe this structure and reason about it. The categorical construction of Part 3 and the zeta-specific equivalence are formalized in Lean, with the classical inputs of Part 1 cited from the literature; the reader can check each formalized step, and see exactly where the connected component ends and the Riemann Hypothesis begins.
 
 %=====================================================================
 \part{Classical Background}
@@ -1002,9 +1002,11 @@ Condition \textup{C4}, infinitely many residue-$\CC$ zeros, matches the class to
 infinite structure (the infinite Euler family of \textup{C2}, the infinite Weierstrass divisor of
 \textup{C3}) and gives the collapse its force: the degenerate fibre of the transport is an
 infinite family, so that whether it lies in one connected component of $\mathcal T_A$
-(Definition~\ref{def:base}) is an infinite alignment. Theorem~\ref{thm:residue-total-singleton}
-decides the component question affirmatively for the C-residue total; the alignment of the real
-reads is the separate question of Proposition~\ref{prop:read-equivalence}.
+(Definition~\ref{def:base}) is a question about infinitely many states at once.
+Theorem~\ref{thm:residue-total-singleton} answers it affirmatively for the C-residue total. That is
+a statement about components; whether the infinitely many real reads align is the separate
+question of Proposition~\ref{prop:read-equivalence}, and for a general A-section the answer is no
+(Proposition~\ref{prop:countermodel}).
 
 \subsection*{Two geometric viewpoints}
 
@@ -1474,10 +1476,11 @@ Grothendieck/colimit readout (Lemma~\ref{lem:pi0-grothendieck}).
 \end{definition}
 
 
-\section{The concentricity theorem}\label{sec:detector}
+\section{The concentricity question}\label{sec:detector}
 
-We now have the worlds and the base, so this section defines the class of functions precisely and
-proves the theorem. Two facts about slice-preserving functions come first: the Weierstrass
+We now have the worlds and the base, so this section defines the class of functions precisely,
+proves what the categorical construction establishes about it, and records what it does not. Two
+facts about slice-preserving functions come first: the Weierstrass
 factorization that gives condition C3 its meaning, and the fact that a residue-$\CC$ zero is a whole
 $6$-sphere, a single connected component of the octonionic world. Then the categorical engine,
 Riehl's computation of the components of a Grothendieck construction as a colimit, which sorts the
@@ -1924,8 +1927,9 @@ unique. Hence $P$ and $Q$ are joined. Since they were arbitrary,
 $\int\mathcal R_A$ is transitive.
 
 Throughout the calculation $z_1$ and $z_2$ are arbitrary C3 coordinates.
-Their common real value is extracted from the singleton colimit in the next
-step. The comparison above rests on the relative stabilizer cancellation
+Whether they carry one common real value is a separate question; the singleton colimit of
+the next step identifies their component classes, not their coordinates
+(Theorem~\ref{thm:residue-total-singleton}, Proposition~\ref{prop:read-equivalence}). The comparison above rests on the relative stabilizer cancellation
 through the single common source tape and north frame.
 \end{proof}
 
@@ -2122,8 +2126,8 @@ Lemma~\ref{lem:c-residue-transitive} proves, in this exact inverse-image groupoi
 two objects are joined by one Grothendieck morphism: the relative
 orbit--stabilizer face is its base component and the $G_2$ transport is its fibre component.
 Thus $\int_{\mathcal B}\mathcal R_A$ is connected.  This is a groupoid-register statement:
-at this stage the established conclusion is connectedness; equality of real coordinates and the
-common centre arise from the colimit readout below.
+the established conclusion is connectedness. Equality of real coordinates does not follow from
+it, and the colimit readout below does not supply it.
 
 By Remark~8.3.5 of \cite{Riehl}, a category is nonempty and connected if and only if its
 $\pi_0$ is the singleton set. Condition C4 supplies nonemptiness --- infinitely many
@@ -2262,7 +2266,8 @@ slice-regular zero-geometry that translates them:
   Theorem~\ref{thm:hardy}). By the residue dictionary below these are exactly the residue-$\CC$
   zeros, so $\{q_n\}$ is infinite.
 \end{itemize}
-After the \textup{(C1)--(C4)} verification, the downstream centre-pinning uses the
+After the \textup{(C1)--(C4)} verification, the downstream identification of the common centre
+as $\tfrac12$, under the Riemann Hypothesis, uses the
 \emph{functional equation} $\xi(s)=\xi(1-s)$,
 $\xi(\bar s)=\overline{\xi(s)}$ (Theorem~\ref{thm:riemann}), used in Theorem~\ref{thm:zeta-concentricity-rh}. The
 \emph{residue dictionary}, a closed zero of $\zetaO$ is a real point (residue field $\RR$, the
