@@ -1,0 +1,35 @@
+-- Root-level receipt probe for the 2026-09-02 synchronization; run with `lake env lean _sync_receipt_audit.lean`.
+import Concentricity
+import Concentricity.Corollaries
+import Concentricity.SpecCandidate
+
+-- TASK-0006 synchronization receipt (2026-09-02): headline statements and axiom surfaces.
+#check @concentricASection_iff_pairwiseTransportLevel
+#check @zetaSection_concentric_iff_RH
+#check @zetaSection_pairwiseTransportLevel_iff_RH
+#check @zetaSection_sphereZero_re_eq_half_of_RH
+#check @zetaSection_transportLevel_eq_half_of_RH
+#check @zeta_criticalLine_zeros_infinite_of_RH
+#check @SpecCandidate.current_ASection_concentricity_type_false
+#check @SpecCandidate.candidateSection_not_pairwiseTransportLevel
+
+#print axioms ASection.sweepTransitive_on_residueSystem
+#print axioms ASection.residueTotal_isConnected
+#print axioms ASection.residueTotal_pi0_singleton
+#print axioms ASection.residueTotal_pi0_colimit_singleton
+#print axioms ASection.residueInputTotalTransportRead_certified
+#print axioms ASection.transportLevel_eq_sphereZero_re
+#print axioms ASection.residueActionState_mem
+#print axioms concentricASection_iff_pairwiseTransportLevel
+#print axioms zetaSection_concentric_iff_RH
+#print axioms zetaSection_pairwiseTransportLevel_iff_RH
+#print axioms zetaSection_sphereZero_re_eq_half_of_RH
+#print axioms zetaSection_transportLevel_eq_half_of_RH
+#print axioms zeta_criticalLine_zeros_infinite_of_RH
+#print axioms SpecCandidate.candidateSection
+#print axioms SpecCandidate.candidateSection_not_concentric
+#print axioms SpecCandidate.current_ASection_concentricity_type_false
+#print axioms SpecCandidate.candidateSection_not_concentricASection
+#print axioms SpecCandidate.candidateSection_not_pairwiseTransportLevel
+#print axioms zetaSection
+#print axioms riemannHypothesis_iff_concentric
