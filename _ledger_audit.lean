@@ -33,12 +33,20 @@ import Concentricity
 #print axioms ASection.readout
 #print axioms ASection.totalA_pi0_singleton
 #print axioms ASection.zero_levels_common
-#print axioms ASection.concentricity
--- The classical leaf proved in-repo (R9) and the Corollaries chain
+-- The C-residue total (Theorem.lean), synchronized 2026-09-02: the former
+-- `ASection.concentricity` was withdrawn; these are the clean structural rows.
+#print axioms ASection.sweepTransitive_on_residueSystem
+#print axioms ASection.residueTotal_isConnected
+#print axioms ASection.residueTotal_pi0_singleton
+#print axioms concentricASection_iff_pairwiseTransportLevel
+-- The classical leaf proved in-repo (R9) and the zeta-specific Corollaries chain
 #print axioms riemannZeta_nontrivialZeros_infinite
-#print axioms ASection.nontrivial_one_centre
-#print axioms zeta_riemannHypothesis
-#print axioms zeta_criticalLine_zeros_infinite
+#print axioms zetaSection_concentric_iff_RH
+#print axioms zetaSection_pairwiseTransportLevel_iff_RH
+#print axioms zetaSection_sphereZero_re_eq_half_of_RH
+#print axioms zeta_criticalLine_zeros_infinite_of_RH
+-- The countermodel (SpecCandidate.lean)
+#print axioms SpecCandidate.current_ASection_concentricity_type_false
 -- The Euler-down / shared-ladder rows (stem-level, base-agnostic; 2026-07-11 late)
 #print axioms exp_fibre_level
 #print axioms ASection.shared_ladder_encounters

@@ -1,61 +1,100 @@
 /-
 Concentricity/Corollaries.lean
 
-The translation corollaries: `cor:nontrivial` and `cor:rh` — the final
-readout, with ½ supplied downstream by `thm:rh-equiv`'s proved rigidity
-(RhEquiv.lean; `rmk:half-downstream`). Both cite `ASection.concentricity`
-(the cocartesian theorem) and nothing else: `cor:nontrivial` IS its metric
-conclusion for a general A-section; `cor:rh` reads it on `zetaSection`
-through the proved `zetaSphereZero_surjective` and
-`riemannHypothesis_iff_concentric`, ½ entering via the functional equation
-in RhEquiv.lean. Their certificates carry sorryAx exactly through
-`ASection.concentricity`, nothing else.
+The corollary layer, synchronized on 2026-09-02 to the zeta-specific
+replacement surface recorded in the companion analysis repository
+(Concentricity-Analysis, TASK-0004).
 
-`sorry` marks UNFORMALIZED, never UNSOUND (R8). This file adds ZERO new
-sorries.
+Formerly this file derived `cor:nontrivial` and `cor:rh` from the universal
+theorem `ASection.concentricity`, which carried `sorryAx` through one admitted
+pairwise read equality.  That universal proposition is false at the exact
+`ASection` type (`SpecCandidate.current_ASection_concentricity_type_false`,
+Concentricity/SpecCandidate.lean), so the unconditional corollaries were
+withdrawn.  What is proved here, with axiom surface
+`[propext, Classical.choice, Quot.sound]`:
+
+* for `zetaSection`, a common centre for the complete enumerated
+  upper-half-plane zero divisor is equivalent to the Riemann Hypothesis;
+* pairwise equality of the certified transport reads of `zetaSection` is
+  likewise equivalent to the Riemann Hypothesis;
+* under the Riemann Hypothesis every such centre and read is `1/2`, and
+  infinitely many zeros lie on the critical line.
+
+These are geometric and categorical reformulations of RH.  They are not a
+proof of RH, and nothing in this repository proves RH.
+
+This file adds ZERO sorries and consumes no declaration carrying `sorryAx`.
 -/
 import Concentricity.ZetaSection
 import Concentricity.ZetaDivisor
+import Concentricity.RhEquiv
+import Concentricity.Theorem
+-- Kept so the root closure still builds the quarantined readout and
+-- `ProjectiveTotal`; nothing below consumes it.
 import Concentricity.ConcentricityReadout
 
 noncomputable section
 
-/-- **`cor:nontrivial`** (master, verbatim): "Identifying residue-ℂ zeros
-with the classically nontrivial zeros, and residue-ℝ zeros with the
-trivial ones (Part 2), such a section has its nontrivial zeros realised
-as infinitely many pairwise disjoint concentric 6-spheres about a single
-real centre." — the single-real-centre clause at stem level: all
-enumerated levels agree (the design's #4 one-liner over the keystone;
-"centre" is `rmk:concentric-gloss` vocabulary, the content is the level
-equality). The sphere realisation, disjointness, and infinitude clauses
-are Island B6 (ZeroSpheres.lean). GATED by the keystone (Island P). -/
-theorem ASection.nontrivial_one_centre (A : ASection) :
-    ∃ c : ℝ, ∀ n : ℕ, (A.sphereZero n).re = c :=
-  A.concentricity
+/-- **Zeta concentricity is RH** (master `thm:zeta-concentricity-rh`(a)):
+centre equality for the complete enumerated upper-half-plane zeta divisor is
+equivalent to Mathlib's `RiemannHypothesis`.  Completeness of the enumeration
+is `zetaSphereZero_surjective`; both directions pass through the proved
+`riemannHypothesis_iff_concentric` (`thm:rh-equiv`, RhEquiv.lean). -/
+theorem zetaSection_concentric_iff_RH :
+    ConcentricASection zetaSection ↔ RiemannHypothesis := by
+  constructor
+  · rintro ⟨c, hc⟩
+    apply riemannHypothesis_iff_concentric.mpr
+    refine ⟨c, ?_⟩
+    intro σ γ hγ hz
+    obtain ⟨n, hn⟩ := zetaSphereZero_surjective ⟨hz, hγ⟩
+    have hcentre := hc n
+    change (zetaSphereZero n).re = c at hcentre
+    rw [hn] at hcentre
+    exact hcentre
+  · intro hRH
+    obtain ⟨c, hc⟩ := riemannHypothesis_iff_concentric.mp hRH
+    refine ⟨c, fun n => ?_⟩
+    change (zetaSphereZero n).re = c
+    exact hc (zetaSphereZero_im_pos n) (zetaSphereZero_zero n)
 
-/-- **`cor:rh`** (master, verbatim): "Every nontrivial zero of the
-classical Riemann zeta function has real part ½; in particular
-infinitely many zeros lie on the line Re s = ½." — rendered against
-Mathlib's `RiemannHypothesis` through the PROVED iff
-`riemannHypothesis_iff_concentric` (thm:rh-equiv, RhEquiv.lean): the
-member's placement (the keystone read on `zetaSection`) gives the common
-centre — the basepoint is the enumeration's own `zetaSphereZero 0`, which
-exists unconditionally by the proved infinitude — and the
-functional-equation rigidity pins ½. GATED by the keystone (Island P)
-and `zetaC3_package`; ½ enters through RhEquiv.lean alone. -/
-theorem zeta_riemannHypothesis : RiemannHypothesis := by
-  obtain ⟨c, hc⟩ := zetaSection.concentricity
-  refine riemannHypothesis_iff_concentric.mpr ⟨c, fun σ γ hγ hz => ?_⟩
-  obtain ⟨n, hn⟩ := zetaSphereZero_surjective (s := (⟨σ, γ⟩ : ℂ)) ⟨hz, hγ⟩
-  have hcn : (zetaSphereZero n).re = c := hc n
-  rw [hn] at hcn
-  exact hcn
+/-- **The categorical read interface is RH-equivalent for zeta** (master
+`thm:zeta-concentricity-rh`(b)): pairwise equality of the certified real
+reads carried by the transport representatives of `zetaSection` is itself
+equivalent to the Riemann Hypothesis.  It is therefore not a weaker bridge
+that connectedness or the singleton component could supply. -/
+theorem zetaSection_pairwiseTransportLevel_iff_RH :
+    PairwiseTransportLevel zetaSection ↔ RiemannHypothesis := by
+  calc
+    PairwiseTransportLevel zetaSection ↔
+        ConcentricASection zetaSection :=
+      (concentricASection_iff_pairwiseTransportLevel zetaSection).symm
+    _ ↔ RiemannHypothesis := zetaSection_concentric_iff_RH
 
-/-- `cor:rh`'s "in particular" clause: infinitely many zeros lie on the
-critical line — the proved infinitude pushed through the readout. GATED
-(inherits `zeta_riemannHypothesis`'s leaves). -/
-theorem zeta_criticalLine_zeros_infinite :
+/-- **Conditional centre** (master `thm:zeta-concentricity-rh`(c)): under
+RH every enumerated zeta zero-sphere is centred at one half. -/
+theorem zetaSection_sphereZero_re_eq_half_of_RH (hRH : RiemannHypothesis) :
+    ∀ n : ℕ, (zetaSection.sphereZero n).re = (1 / 2 : ℝ) := by
+  intro n
+  change (zetaSphereZero n).re = (1 / 2 : ℝ)
+  exact concentric_of_RH hRH (zetaSphereZero_im_pos n)
+    (zetaSphereZero_zero n)
+
+/-- The same conditional result at the certified categorical read. -/
+theorem zetaSection_transportLevel_eq_half_of_RH
+    (hRH : RiemannHypothesis) :
+    ∀ n : ℕ, zetaSection.transportLevel n = (1 / 2 : ℝ) := by
+  intro n
+  rw [zetaSection.transportLevel_eq_sphereZero_re]
+  exact zetaSection_sphereZero_re_eq_half_of_RH hRH n
+
+/-- The critical-line infinitude clause, in the only form this repository
+derives: under RH, the proved infinitude of nontrivial zeros
+(`riemannZeta_nontrivialZeros_infinite`) lands on the line `Re s = 1/2`.
+Hardy's unconditional theorem (master `thm:hardy`) is cited from the
+literature and is not formalized here. -/
+theorem zeta_criticalLine_zeros_infinite_of_RH (hRH : RiemannHypothesis) :
     {s : ℂ | riemannZeta s = 0 ∧ s.re = 1 / 2}.Infinite := by
   refine Set.Infinite.mono ?_ riemannZeta_nontrivialZeros_infinite
   intro s hs
-  exact ⟨hs.1, zeta_riemannHypothesis s hs.1 hs.2.1 hs.2.2⟩
+  exact ⟨hs.1, hRH s hs.1 hs.2.1 hs.2.2⟩

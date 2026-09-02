@@ -8,7 +8,14 @@ The statement layer STOPS here: the proof of `thm:concentricity` — the
 C1–C4 assembly, including the placement sentence (landed in the master
 2026-07-03, the author's alone) — is Phase 4.
 
-`sorry` marks UNFORMALIZED, never UNSOUND (R8).
+STATUS 2026-09-02 (synchronized to the analysis record, TASK-0004): this
+file contains ZERO sorries.  The transitivity, connectedness, and
+singleton-component results for the C-residue total are proved and clean.
+The former universal theorem `ASection.concentricity` and the admitted
+pairwise read equality it consumed were withdrawn: the universal statement is
+false at this exact `ASection` type (Concentricity/SpecCandidate.lean).  The
+clean interface that remains is at the end of this file; the zeta-specific
+replacement surface is Concentricity/Corollaries.lean.
 -/
 import Concentricity.Toolkit
 import Concentricity.ASectionCResidueDiagram
@@ -246,14 +253,21 @@ the connection to the spheres. -/
 --       ∃ c : ℝ, ∀ n : ℕ, (A.sphereZero n).re = c
 --
 -- `ASection.nontrivial_one_centre` (Corollaries.lean:33) and
--- `zeta_riemannHypothesis` (:47) already call it.  They are written and
--- waiting on that one name; nothing about them needs rerouting.
+-- `zeta_riemannHypothesis` (:47) already called it at the time of this
+-- record.  [Both were withdrawn on 2026-09-02; see SUPERSEDED below.]
 --
 -- It is declared at the end of the unified endgame ladder
 -- (`register/70-whole-square.md` §7).  Per the ratified flight plan
 -- (`register/80-concentricity-endgame.md`), it is declared HERE, at this
 -- file's marked endpoint, against the three-clause proof plan of record
 -- above.
+--
+-- SUPERSEDED 2026-09-02.  `ASection.concentricity` was declared here on
+-- 2026-07-27 through one admitted pairwise read equality, and both were
+-- withdrawn on 2026-09-02: the universal proposition is refuted by the
+-- field-complete A-section `SpecCandidate.candidateSection`.  The consumers in
+-- Corollaries.lean were rewritten to the zeta-specific equivalences.  See the
+-- section "The readout boundary" at the end of this file.
 
 /-- The certified membership of the enumerated representatives: every
 `sphereZero m` is a member of the `ι_A`-included square at the north
@@ -982,58 +996,52 @@ theorem ASection.residueTotal_pi0_colimit_singleton (A : ASection) :
   exact _root_.Quotient.inductionOn₂ (e.symm κ₁) (e.symm κ₂)
     (fun P Q => A.residueTotal_pi0_singleton P Q)
 
-/-- **THE A-SPECIFIC TRANSPORT-RESIDUE SINGLETON READOUT.**  The component
-colimit singleton is instantiated at two certified transport-residue
-transport-residue representatives.  Its theorem-level result is already the
-real equality `hkn`; the master consumes its pairwise statement at the actual
-certified `0`-th representative. -/
-theorem ASection.residueTotal_transportLevel_singleton
-    (A : ASection) (n m : ℕ) :
-    A.transportLevel n = A.transportLevel m := by
-  have hcolim := A.residueTotal_pi0_colimit_singleton
-    (toColimitObj A.AsectionCResidueInputDiagram
-      (A.residueInputTotalObject n baseWorld))
-    (toColimitObj A.AsectionCResidueInputDiagram
-      (A.residueInputTotalObject m baseWorld))
-  have hn :
-      A.residueInputTotalTransportRead
-          (A.residueInputTotalObject n baseWorld) =
-        A.transportLevel n := by
-    exact A.residueInputTotalTransportRead_certified n baseWorld
-  have hm :
-      A.residueInputTotalTransportRead
-          (A.residueInputTotalObject m baseWorld) =
-        A.transportLevel m := by
-    exact A.residueInputTotalTransportRead_certified m baseWorld
-  have hkn : A.transportLevel n = A.transportLevel m := by
-    sorry
-  exact hkn
+/-! ## The readout boundary (synchronized 2026-09-02)
 
-/-- **THE CONCENTRICITY THEOREM** (master `thm:concentricity`): the
-infinitely many residue-ℂ zero-spheres of an A-section are concentric —
-one real centre.  `∫𝓡_A` is a connected action groupoid (the declaration
-above), π₀ collapses to the singleton k (8.3.5), and val(k) = c is that
-real part, read at the certified representatives. -/
-theorem ASection.concentricity (A : ASection) :
-    ∃ c : ℝ, ∀ n : ℕ, (A.sphereZero n).re = c := by
-  refine ⟨A.transportLevel 0, fun n => ?_⟩
-  -- THE LOCKED REGISTER (the author, 2026-07-27, verbatim): ι_A is a
-  -- connected action groupoid.  It is one square, one orbit, hence it is
-  -- connected — the full inclusion of the author's 0-to-N square, consumed
-  -- by ι_A (certified 57384ae); one orbit because it is the image of one
-  -- square (CTIC Ex. 1.5.19: components are orbits).  "Connectedness" is
-  -- Mathlib's vocabulary, not a project object.  Hence
-  -- π₀(∫𝓡_A) ≅ colim (π₀ ∘ 𝓡_A) (`pi0GrothendieckEquiv` above) collapses
-  -- to a singleton k, and val(k) = c is that real part.  Hence the
-  -- infinitely many residue-ℂ zero-spheres of the A-section share the one
-  -- real value c: they are CONCENTRIC.
-  --
-  -- The theorem consumes the author's declarations: ∫𝓡_A is a connected
-  -- action groupoid (residueTotal_isConnected, the immediacy clause), hence
-  -- π₀ is the singleton (residueTotal_pi0_singleton, CHT Rem. 8.3.5).
-  -- val(k) = c: the level read on the one class, at the certified
-  -- transport representatives — 8.3.5 applied, then the readout.
-  rw [← A.transportLevel_eq_sphereZero_re n]
-  have hkn : A.transportLevel n = A.transportLevel 0 :=
-    A.residueTotal_transportLevel_singleton n 0
-  exact hkn
+The singleton collapse above is a statement about connected components of
+`∫𝓡_A`.  It does not, by itself, compare the ordinary real reads
+`A.transportLevel n` carried by two certified representatives: two objects of
+one component are joined by a zigzag of transports, and no cocone, descent
+law, or invariance law for `residueInputTotalTransportRead` along those
+transports is proved.
+
+The admitted pairwise equality that formerly closed this gap
+(`ASection.residueTotal_transportLevel_singleton`, one `sorry`) and the
+universal theorem it fed (`ASection.concentricity`, master
+`thm:concentricity` in its former form) were withdrawn on 2026-09-02.  The
+universal statement is false at this exact `ASection` type:
+`SpecCandidate.current_ASection_concentricity_type_false`
+(Concentricity/SpecCandidate.lean) exhibits a literal, field-complete
+A-section whose enumerated zero-spheres do not share a centre.  What remains
+here is the exact clean interface between the two formulations of the open
+question; the zeta-specific answer is in Concentricity/Corollaries.lean. -/
+
+/-- Common real centre for the enumerated residue-ℂ zero-spheres of an
+A-section.  This is the conclusion the withdrawn universal theorem asserted
+for every `A`; it is now a predicate, true for some A-sections and false for
+others (`SpecCandidate.candidateSection_not_concentricASection`). -/
+def ConcentricASection (A : ASection) : Prop :=
+  ∃ c : ℝ, ∀ n : ℕ, (A.sphereZero n).re = c
+
+/-- Equality of the real reads carried by all certified transport
+representatives. -/
+def PairwiseTransportLevel (A : ASection) : Prop :=
+  ∀ n m : ℕ, A.transportLevel n = A.transportLevel m
+
+/-- The two formulations are the same proposition, because the certified read
+computes to the spherical-zero real part
+(`ASection.transportLevel_eq_sphereZero_re`).  Consequently pairwise read
+equality is not a weaker categorical surrogate for concentricity, and the
+singleton collapse cannot supply it for a general A-section. -/
+theorem concentricASection_iff_pairwiseTransportLevel (A : ASection) :
+    ConcentricASection A ↔ PairwiseTransportLevel A := by
+  constructor
+  · rintro ⟨c, hc⟩ n m
+    rw [A.transportLevel_eq_sphereZero_re,
+      A.transportLevel_eq_sphereZero_re]
+    exact (hc n).trans (hc m).symm
+  · intro h
+    refine ⟨(A.sphereZero 0).re, fun n => ?_⟩
+    rw [← A.transportLevel_eq_sphereZero_re n,
+      ← A.transportLevel_eq_sphereZero_re 0]
+    exact h n 0

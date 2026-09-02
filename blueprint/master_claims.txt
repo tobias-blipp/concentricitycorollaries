@@ -68,11 +68,6 @@ CERTIFIEDAT riemannZeta_nontrivialZeros_infinite
 OBJECT riemannZeta_nontrivialZeros_infinite
 END
 
-CLAIM [thm:hardy] Infinitely many nontrivial zeros of $ $ lie on the line $ s= 12$.
-CERTIFIEDAT zeta_criticalLine_zeros_infinite
-OBJECT zeta_criticalLine_zeros_infinite
-END
-
 CLAIM [def:zeta-Cstar] $ : $ is the meromorphic continuation of $ $ regarded as a map to the Riemann sphere: $ (s
 CERTIFIEDAT zetaC
 OBJECT zetaC
@@ -403,7 +398,7 @@ CERTIFIEDAT zeroSpheres_infinite
 OBJECT zeroSpheres_infinite
 END
 
-CLAIM [thm:rh-equiv] The following are equivalent: {enumerate}[leftmargin=2.4em] [(a)] the Riemann Hypothesis;
+CLAIM [thm:rh-equiv] The following are equivalent: {enumerate}[leftmargin=2.4em] [(a)] the Riemann Hypothesis; 
 CERTIFIEDAT riemannHypothesis_iff_concentric
 OBJECT riemannHypothesis_iff_concentric
 END
@@ -515,7 +510,7 @@ END
 
 CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
 CERTIFIEDAT GreatCircle.stabilizerPart
-OBJECT diagonalGL
+OBJECT GreatCircle.stabilizerPartunique
 END
 
 CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
@@ -540,7 +535,7 @@ END
 
 CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
 CERTIFIEDAT ASection.distinguishedDiskAction
-OBJECT diagonalGL
+OBJECT ASection.distinguishedDiskActionfixescayleyzero
 END
 
 CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
@@ -565,6 +560,86 @@ END
 
 CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
 CERTIFIEDAT ASection.eulerDiskAction_eq_value
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.GpvTransport
+OBJECT ASection.GpvTransport
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.GpvTransport.diskExpAction_eq_value
+OBJECT diskExpAction
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.GpvTransport.diskExpAction_endpoint_eq
+OBJECT diskExpAction
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.GpvTransport.lift_endpoint_re_eq
+OBJECT ASection.GpvTransport
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.GpvTransport.level
+OBJECT ASection.GpvTransport
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.GpvTransport.continuous_level
+OBJECT ASection.GpvTransport
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.GpvTransport.lift_unique
+OBJECT ASection.GpvTransport
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.GpvTransport.level_independent
+OBJECT ASection.GpvTransport
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.GpvTransport.value_at_source
+OBJECT ASection.GpvTransport
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.GpvTransport.value_at_target
+OBJECT ASection.GpvTransport
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.GpvTransport.endpoint_log_norm_eq
+OBJECT ASection.GpvTransport
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.GpvTransport.endpoint_norm_eq
+OBJECT ASection.GpvTransport
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.projectiveGpvActionSquare
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.projectiveGpvActionSquare_level
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.projectiveGpvActionSquare_input_commutes
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.projectiveGpvActionSquare_output_commutes
 OBJECT diagonalGL
 END
 
@@ -609,6 +684,21 @@ OBJECT diagonalGL
 END
 
 CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.projectiveObjectFrame_north
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.distinguishedDiskAction_fixes_cayley_zero
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.distinguishedDiskAction_fixes_cayley_N
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
 CERTIFIEDAT ASection.projectiveArrowElement_id
 OBJECT diagonalGL
 END
@@ -629,12 +719,67 @@ OBJECT diagonalGL
 END
 
 CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.AsectionStateInput
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.AsectionStateOutput
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.AsectionState_input_then_equivariant
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.ActionTransportSquare.coordinateTransport_commutes
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.ActionTransportSquare.input_commutes
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.ActionTransportSquare.output_commutes
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
 CERTIFIEDAT ASection.AsectionActionState
 OBJECT diagonalGL
 END
 
 CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
 CERTIFIEDAT ASection.AsectionActionTransport
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.AsectionActionState.ofInput
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.AsectionActionState_ofInput_value
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.AsectionActionTransport_obj_input
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.AsectionActionTransport_obj_positioned
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.AsectionActionTransport_obj_value
 OBJECT diagonalGL
 END
 
@@ -650,6 +795,41 @@ END
 
 CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
 CERTIFIEDAT ASection.AsectionActionDiagram
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.residueActionState
+OBJECT residueActionState
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.residueActionState_mem
+OBJECT residueActionState
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.c4_infinite
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.transportLevel
+OBJECT transportLevel
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.ambientTotalCategory
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT ASection.ambientTotalGroupoid
+OBJECT diagonalGL
+END
+
+CLAIM [def:base] The base is the projective action groupoid \[ B =PGL(2, ) {OnePoint}( ). \] Its objects ar
+CERTIFIEDAT grothendieckGrpdGroupoid
 OBJECT diagonalGL
 END
 
@@ -734,6 +914,21 @@ OBJECT CResidueZeroLocus
 END
 
 CLAIM [def:residue-subdiagram] The {residue locus} of an A-section is $\{z : A(z)=0,\ {Im}z>0\}$ {(} {CResidueZeroLocus} 
+CERTIFIEDAT ASection.IsCResidueInput
+OBJECT CResidueZeroLocus
+END
+
+CLAIM [def:residue-subdiagram] The {residue locus} of an A-section is $\{z : A(z)=0,\ {Im}z>0\}$ {(} {CResidueZeroLocus} 
+CERTIFIEDAT ASection.CResidueInputWorld
+OBJECT CResidueZeroLocus
+END
+
+CLAIM [def:residue-subdiagram] The {residue locus} of an A-section is $\{z : A(z)=0,\ {Im}z>0\}$ {(} {CResidueZeroLocus} 
+CERTIFIEDAT ASection.AsectionCResidueInputDiagram
+OBJECT CResidueZeroLocus
+END
+
+CLAIM [def:residue-subdiagram] The {residue locus} of an A-section is $\{z : A(z)=0,\ {Im}z>0\}$ {(} {CResidueZeroLocus} 
 CERTIFIEDAT ASection.AsectionCResidueDiagram
 OBJECT AsectionCResidueDiagram
 END
@@ -758,34 +953,109 @@ CERTIFIEDAT ASection.AsectionCResidueInclusionTotal_faithful
 OBJECT AsectionCResidueInclusion
 END
 
+CLAIM [def:residue-subdiagram] The {residue locus} of an A-section is $\{z : A(z)=0,\ {Im}z>0\}$ {(} {CResidueZeroLocus} 
+CERTIFIEDAT ASection.residueTotalCategory
+OBJECT CResidueZeroLocus
+END
+
+CLAIM [def:residue-subdiagram] The {residue locus} of an A-section is $\{z : A(z)=0,\ {Im}z>0\}$ {(} {CResidueZeroLocus} 
+CERTIFIEDAT ASection.residueTotalGroupoid
+OBJECT CResidueZeroLocus
+END
+
+CLAIM [lem:c-residue-transitive] For an A-section $A$, the total inverse-image groupoid \[ _{ B} R_A \] is transitive: any 
+CERTIFIEDAT ASection.CResidueInputActionSquare
+OBJECT CResidueInputActionSquare
+END
+
+CLAIM [lem:c-residue-transitive] For an A-section $A$, the total inverse-image groupoid \[ _{ B} R_A \] is transitive: any 
+CERTIFIEDAT ASection.CResidueInputFiberHom
+OBJECT CResidueInputFiberHom
+END
+
+CLAIM [lem:c-residue-transitive] For an A-section $A$, the total inverse-image groupoid \[ _{ B} R_A \] is transitive: any 
+CERTIFIEDAT ASection.CResidueInputTotal_transitive
+OBJECT CResidueInputTotal_transitive
+END
+
 CLAIM [lem:c-residue-transitive] For an A-section $A$, the total inverse-image groupoid \[ _{ B} R_A \] is transitive: any 
 CERTIFIEDAT ASection.sweepTransitive_on_residueSystem
 OBJECT sweepTransitive_on_residueSystem
 END
 
-CLAIM [thm:concentricity] Let $A$ be an $A$-section. The infinitely many C-residue zero $S^6$ spheres transported by
-CERTIFIEDAT ASection.concentricity
-OBJECT concentricity
+CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
+CERTIFIEDAT ASection.sweepTransitive_on_residueSystem
+OBJECT sweepTransitive_on_residueSystem
 END
 
-CLAIM [thm:concentricity] Let $A$ be an $A$-section. The infinitely many C-residue zero $S^6$ spheres transported by
+CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
 CERTIFIEDAT ASection.residueTotal_isConnected
 OBJECT residueTotal_isConnected
 END
 
-CLAIM [thm:concentricity] Let $A$ be an $A$-section. The infinitely many C-residue zero $S^6$ spheres transported by
+CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
 CERTIFIEDAT ASection.residueTotal_pi0_singleton
 OBJECT residueTotal_pi0_singleton
 END
 
-CLAIM [thm:concentricity] Let $A$ be an $A$-section. The infinitely many C-residue zero $S^6$ spheres transported by
+CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
+CERTIFIEDAT ASection.residueTotal_pi0_colimit_singleton
+OBJECT residueTotal_pi0_colimit_singleton
+END
+
+CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
+CERTIFIEDAT ASection.residueInputTotalTransportRead_certified
+OBJECT residueInputTotalTransportRead_certified
+END
+
+CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
+CERTIFIEDAT ASection.transportLevel_eq_sphereZero_re
+OBJECT transportLevel_eq_sphereZero_re
+END
+
+CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
 CERTIFIEDAT ASection.transportLevel
 OBJECT transportLevel
 END
 
-CLAIM [cor:nontrivial] Under the residue-$ $/classically-nontrivial-zero identification, the already-proved popul
-CERTIFIEDAT ASection.nontrivial_one_centre
-OBJECT nontrivial_one_centre
+CLAIM [thm:residue-total-singleton] Let $A$ be an $A$-section, and let $ _{ B} R_A$ be the total of its C-residue inverse-imag
+CERTIFIEDAT ASection.residueActionState_mem
+OBJECT residueActionState_mem
+END
+
+CLAIM [prop:read-equivalence] For an A-section $A$ the following are equivalent: {enumerate}[leftmargin=2.4em] [(a)] the
+CERTIFIEDAT ConcentricASection
+OBJECT ConcentricASection
+END
+
+CLAIM [prop:read-equivalence] For an A-section $A$ the following are equivalent: {enumerate}[leftmargin=2.4em] [(a)] the
+CERTIFIEDAT PairwiseTransportLevel
+OBJECT PairwiseTransportLevel
+END
+
+CLAIM [prop:read-equivalence] For an A-section $A$ the following are equivalent: {enumerate}[leftmargin=2.4em] [(a)] the
+CERTIFIEDAT concentricASection_iff_pairwiseTransportLevel
+OBJECT concentricASection_iff_pairwiseTransportLevel
+END
+
+CLAIM [prop:countermodel] Let $A=(q^{2}+1)\, $, the octonionic zeta multiplied by the slice-regular primary factor o
+CERTIFIEDAT SpecCandidate.candidateSection
+OBJECT candidateSection
+END
+
+CLAIM [prop:countermodel] Let $A=(q^{2}+1)\, $, the octonionic zeta multiplied by the slice-regular primary factor o
+CERTIFIEDAT SpecCandidate.candidateSection_not_concentric
+OBJECT candidateSection_not_concentric
+END
+
+CLAIM [prop:countermodel] Let $A=(q^{2}+1)\, $, the octonionic zeta multiplied by the slice-regular primary factor o
+CERTIFIEDAT SpecCandidate.current_ASection_concentricity_type_false
+OBJECT current_ASection_concentricity_type_false
+END
+
+CLAIM [prop:countermodel] Let $A=(q^{2}+1)\, $, the octonionic zeta multiplied by the slice-regular primary factor o
+CERTIFIEDAT SpecCandidate.candidateSection_not_pairwiseTransportLevel
+OBJECT candidateSection_not_pairwiseTransportLevel
 END
 
 CLAIM [cor:zeta-section] $ $ is an $A$-section {(Definition~ {def:A-section})}: a section of $ R$ satisfying {(C1)-
@@ -793,12 +1063,27 @@ CERTIFIEDAT zetaSection
 OBJECT zetaSection
 END
 
-CLAIM [cor:rh] Every nontrivial zero of the classical Riemann zeta function has real part $ 12$; in parti
-CERTIFIEDAT zeta_riemannHypothesis
-OBJECT zeta_riemannHypothesis
+CLAIM [thm:zeta-concentricity-rh] For the A-section $ $ of Corollary~ {cor:zeta-section}: {enumerate}[leftmargin=2.4em] [(a)
+CERTIFIEDAT zetaSection_concentric_iff_RH
+OBJECT zetaSection_concentric_iff_RH
 END
 
-CLAIM [cor:rh] Every nontrivial zero of the classical Riemann zeta function has real part $ 12$; in parti
-CERTIFIEDAT zeta_criticalLine_zeros_infinite
-OBJECT zeta_criticalLine_zeros_infinite
+CLAIM [thm:zeta-concentricity-rh] For the A-section $ $ of Corollary~ {cor:zeta-section}: {enumerate}[leftmargin=2.4em] [(a)
+CERTIFIEDAT zetaSection_pairwiseTransportLevel_iff_RH
+OBJECT zetaSection_pairwiseTransportLevel_iff_RH
+END
+
+CLAIM [thm:zeta-concentricity-rh] For the A-section $ $ of Corollary~ {cor:zeta-section}: {enumerate}[leftmargin=2.4em] [(a)
+CERTIFIEDAT zetaSection_sphereZero_re_eq_half_of_RH
+OBJECT zetaSection_sphereZero_re_eq_half_of_RH
+END
+
+CLAIM [thm:zeta-concentricity-rh] For the A-section $ $ of Corollary~ {cor:zeta-section}: {enumerate}[leftmargin=2.4em] [(a)
+CERTIFIEDAT zetaSection_transportLevel_eq_half_of_RH
+OBJECT zetaSection_transportLevel_eq_half_of_RH
+END
+
+CLAIM [thm:zeta-concentricity-rh] For the A-section $ $ of Corollary~ {cor:zeta-section}: {enumerate}[leftmargin=2.4em] [(a)
+CERTIFIEDAT zeta_criticalLine_zeros_infinite_of_RH
+OBJECT zeta_criticalLine_zeros_infinite_of_RH
 END

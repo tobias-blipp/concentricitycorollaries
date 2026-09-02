@@ -1,3 +1,13 @@
+> **STALE — pre-synchronization artifact (generated before 2026-09-02).**
+> On 2026-09-02 the production surface was synchronized to the zeta-specific
+> replacement: `ASection.concentricity`, `ASection.nontrivial_one_centre`, and
+> `zeta_riemannHypothesis` were withdrawn (the universal statement is false;
+> see `Concentricity/SpecCandidate.lean`), the repository now has zero
+> `sorry`, and the headline surface is `Concentricity/Corollaries.lean`
+> (`zetaSection_concentric_iff_RH` and companions). Rows below that mention the
+> withdrawn names describe the old tree. Regenerate this file from the current
+> sources before citing it. See `AGENTS.md`, section "STATUS 2026-09-02".
+
 # Blueprint–Lean certificate table
 
 Generated mechanically from the current master, current Lean sources, and the pinned toolchain.

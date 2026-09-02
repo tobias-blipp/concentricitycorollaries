@@ -14,8 +14,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Classical Background</title>
 <link rel="next" href="sect0002.html" title="Slice-Preserving Theory, the Ring R, and the Equivalence" />
-<link rel="prev" href="index.html" title="Concentric Zero-Spheres of a class of sections of the commutative ring R of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a corollary" />
-<link rel="up" href="index.html" title="Concentric Zero-Spheres of a class of sections of the commutative ring R of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a corollary" />
+<link rel="prev" href="index.html" title="Concentric Zero-Spheres of a class of sections of the commutative ring R of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a concentricity statement" />
+<link rel="up" href="index.html" title="Concentric Zero-Spheres of a class of sections of the commutative ring R of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a concentricity statement" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
 <link rel="stylesheet" href="styles/showmore.css" />
@@ -26,7 +26,7 @@
 <body>
 <header>
 <svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
-<h1 id="doc_title"><a href="index.html">Concentric Zero-Spheres of a class of sections of the commutative ring \(\mathcal R\) of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a corollary</a></h1>
+<h1 id="doc_title"><a href="index.html">Concentric Zero-Spheres of a class of sections of the commutative ring \(\mathcal R\) of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a concentricity statement</a></h1>
 </header>
 
 <div class="wrapper">
@@ -81,7 +81,7 @@
   </ul>
  </li>
 <li class="">
-  <a href="part-stack.html"><span class="toc_ref">3</span> <span class="toc_entry">The Categorical Construction and the Concentricity Theorem</span></a>
+  <a href="part-stack.html"><span class="toc_ref">3</span> <span class="toc_entry">The Categorical Construction and the Concentricity Question</span></a>
   <span class="expand-toc">▶</span>
   <ul class="sub-toc-1">
      <li class="">
@@ -403,29 +403,10 @@
     
     
     
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="/find/#doc/zeta_criticalLine_zeros_infinite" class="lean_decl">zeta_criticalLine_zeros_infinite</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
         </div>
   </div>
   <div class="theorem_thmcontent">
-  <p>  Infinitely many nontrivial zeros of \(\zeta \) lie on the line \(\operatorname{Re}s=\tfrac 12\). </p>
+  <p> Infinitely many nontrivial zeros of \(\zeta \) lie on the line \(\operatorname{Re}s=\tfrac 12\). </p>
 
   </div>
 </div>
@@ -499,7 +480,7 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   \(\zeta _{\mathbb {C}^{*}}:\mathbb {C}^{*}\to \mathbb {C}^{*}\) is the meromorphic continuation of \(\zeta \) regarded as a map to the Riemann sphere: \(\zeta _{\mathbb {C}^{*}}(s)=\zeta (s)\) for \(s\in \mathbb {C}\setminus \{ 1\} \); \(\zeta _{\mathbb {C}^{*}}(1)=\infty \) (the simple pole, Theorem&#160;<a href="sect0001.html#thm:riemann">1.1</a>); and \(\zeta _{\mathbb {C}^{*}}(\infty )=1\), since \(\zeta (s)\to 1\) as \(\operatorname{Re}(s)\to +\infty \) (the \(p\)-test: only the \(n=1\) term of \(\sum _n n^{-s}\) survives). It is holomorphic into \(\mathbb {C}^{*}\) on \(\mathbb {C}^{*}\setminus \{ 1\} \), its sole pole being \(s=1\). The functional equation, the conjugate symmetry \(\zeta _{\mathbb {C}^{*}}(\bar s)=\overline{\zeta _{\mathbb {C}^{*}}(s)}\), and Hardy’s infinitude (Theorem&#160;<a href="sect0001.html#thm:hardy">1.5</a>) hold verbatim for \(\zeta _{\mathbb {C}^{*}}\), as they concern values on \(\mathbb {C}\setminus \{ 1\} \) where \(\zeta _{\mathbb {C}^{*}}=\zeta \). </p>
+  <p>   \(\zeta _{\mathbb {C}^{*}}:\mathbb {C}^{*}\to \mathbb {C}^{*}\) is the meromorphic continuation of \(\zeta \) regarded as a map to the Riemann sphere: \(\zeta _{\mathbb {C}^{*}}(s)=\zeta (s)\) for \(s\in \mathbb {C}\setminus \{ 1\} \); \(\zeta _{\mathbb {C}^{*}}(1)=\infty \) (the simple pole, Theorem&#160;<a href="sect0001.html#thm:riemann">1.1</a>); and \(\zeta _{\mathbb {C}^{*}}(\infty )=1\), a <em>conventional</em> value at the adjoined domain point, chosen because \(\zeta (s)\to 1\) as \(\operatorname{Re}(s)\to +\infty \) (only the \(n=1\) term of \(\sum _n n^{-s}\) survives). On the finite plane, \(\zeta _{\mathbb {C}^{*}}\) is holomorphic into \(\mathbb {C}^{*}\) on \(\mathbb {C}\setminus \{ 1\} \), its sole pole being \(s=1\). It is <em>not</em> continuous at the domain point \(\infty \), and no continuous extension exists there: \(\zeta (-2n)=0\) for every \(n\ge 1\) while \(\zeta (\sigma )\to 1\) as \(\sigma \to +\infty \), so \(\zeta \) has no limit at \(\infty \). Nothing downstream uses continuity at \(\infty \): Definition&#160;<a href="part-stack.html#def:A-section">10.4</a> places its conditions on the finite plane and on a slice half-space, and treats the value at \(N\) as assigned data. (Earlier versions of this definition asserted holomorphy on \(\mathbb {C}^{*}\setminus \{ 1\} \); that assertion was false and was withdrawn on 2026-09-02.) The functional equation, the conjugate symmetry \(\zeta _{\mathbb {C}^{*}}(\bar s)=\overline{\zeta _{\mathbb {C}^{*}}(s)}\), and Hardy’s infinitude (Theorem&#160;<a href="sect0001.html#thm:hardy">1.5</a>) hold verbatim for \(\zeta _{\mathbb {C}^{*}}\), as they concern values on \(\mathbb {C}\setminus \{ 1\} \) where \(\zeta _{\mathbb {C}^{*}}=\zeta \). </p>
 
   </div>
 </div>
@@ -593,9 +574,9 @@
 
   <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
 
-  <a href="index.html" title="Concentric Zero-Spheres of a class of sections of the commutative ring \(\mathcal R\) of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a corollary"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="index.html" title="Concentric Zero-Spheres of a class of sections of the commutative ring \(\mathcal R\) of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a concentricity statement"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
-  <a href="index.html" title="Concentric Zero-Spheres of a class of sections of the commutative ring \(\mathcal R\) of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a corollary"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+  <a href="index.html" title="Concentric Zero-Spheres of a class of sections of the commutative ring \(\mathcal R\) of slice preserving functions over the compactified Octonions with the Riemann Hypothesis as a concentricity statement"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>
   <a href="sect0002.html" title="Slice-Preserving Theory, the Ring \(\mathcal R\), and the Equivalence"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
 </a>

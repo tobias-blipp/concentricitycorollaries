@@ -4,18 +4,19 @@
 %          infinite Euler product, infinite Hadamard product) -- cited.
 %  Part 2: slice-preserving theory, the ring R under the *-product, and the
 %          equivalence/translation theorems (concentric zero-spheres <=> RH).
-%  Part 3: the Concentricity Theorem. The base is
-%          B = PGL(2,R) \ltimes OnePoint(R) and the sphere world SphereWorld.
-%          Conditions C1--C3 determine one distinguished Mobius/exponential
-%          element; orbit--stabilizer carries its whole O*-valued action
-%          across the base. Its sphere projection is AsectionSlice, while
-%          the value-bearing AsectionFunctor A : B -> Grpd has normalized
-%          A-value states as fibres. Then T_A = Int_B A_A is formed. The
-%          readout is pi_0(T_A) = colim_B(pi_0 . A_A). The colimit performs the
-%          transport-generated identifications and yields one C-residue
-%          real-value singleton {c}, c in R. Hence the populated C-residue
-%          zero 6-spheres have common centre c and are concentric. Classical
-%          translation and the numerical identification c=1/2 are downstream.
+%  Part 3: the categorical construction and the concentricity question.
+%          The base is B = PGL(2,R) \ltimes OnePoint(R) and the sphere world
+%          SphereWorld. Conditions C1--C3 determine one distinguished
+%          Mobius/exponential element; orbit--stabilizer carries its whole
+%          O*-valued action across the base; the value-bearing functor
+%          A_A : B -> Grpd has normalized A-value states as fibres, and
+%          T_A = Int_B A_A is its total. The C-residue inverse-image total
+%          is transitive, hence connected, with singleton pi_0 and singleton
+%          component colimit (proved, kernel-clean). That singleton does NOT
+%          identify the real reads of the residue representatives: the
+%          unrestricted concentricity statement is FALSE (a field-complete
+%          nonconcentric A-section is exhibited), and for zeta_O the read
+%          equality is equivalent to RH. SYNCHRONIZED 2026-09-02.
 %=====================================================================
 
 \documentclass[11pt]{article}
@@ -99,7 +100,7 @@
 \title{Concentric Zero-Spheres of a class of sections of the commutative ring $\mathcal R$\\ of slice preserving functions
 over the compactified Octonions\\[0.4em]
 \large
-with the Riemann Hypothesis as a corollary}
+with the Riemann Hypothesis as a concentricity statement}
 \author{Jesse Michael Paul\\[2pt]
 {\normalsize PhD Candidate, Department of Mathematics \& Statistics}\\
 {\normalsize University of North Carolina at Greensboro}}
@@ -132,14 +133,14 @@ equivalence theorems: the classically nontrivial zeros of $\zeta$ are residue-$\
 $6$-spheres, and the Riemann Hypothesis holds exactly when those spheres are concentric, sharing
 a single real centre.
 
-Part~3 proves the main result, the \emph{Concentricity Theorem}, for a section $A\in\mathcal R$
+Part~3 studies the \emph{concentricity question} for a section $A\in\mathcal R$
 satisfying four conditions: \textup{(C1)} meromorphic continuation with a single simple pole
 carried to $\infty=N$; \textup{(C2)} an infinite Euler product; \textup{(C3)} an infinite
 slice-regular Weierstrass factorization whose spherical factors are the residue-$\CC$ zeros; and
-\textup{(C4)} infinitely many such zeros. The theorem says the residue-$\CC$ zero $6$-spheres of
-any such $A$ are concentric.
+\textup{(C4)} infinitely many such zeros. The question is whether the residue-$\CC$ zero
+$6$-spheres of such an $A$ are concentric.
 
-The proof builds a concentricity detector from the section itself, out of groupoids,
+The tool is a concentricity detector built from the section itself, out of groupoids,
 orbit--stabilizer, and categorical homotopy theory. Conditions \textup{(C1)--(C3)} determine one
 distinguished exponential M\"obius action on the projective base
 $\mathcal B=PGL(2,\RR)\ltimes\operatorname{OnePoint}(\RR)$: a logarithmic coordinate $z$ is
@@ -156,15 +157,21 @@ The C-residue system is the inverse-image action groupoid
 $\mathcal R_A$ selected inside $\mathcal A_A$, with fully faithful inclusion
 $\iota_A:\mathcal R_A\Rightarrow\mathcal A_A$, and hence a fully faithful inclusion of totals
 $\int\iota_A:\int_{\mathcal B}\mathcal R_A\hookrightarrow\mathcal T_A$. The relative
-orbit--stabilizer comparison makes this inverse-image total transitive, therefore connected.
-Its component colimit is consequently a singleton. Instantiated at any two certified residue
-representatives, that singleton equality is already equality of their A-specific real-level
-reads; hence all of them have one real value $c\in\RR$. Thus every populated residue-$\CC$ zero
-$6$-sphere has centre $c$. The theorem asserts the shared centre; naming the number is the task
-of the corollaries.
+orbit--stabilizer comparison makes this inverse-image total transitive, therefore connected, and
+its component colimit is consequently a singleton. Each certified residue representative carries
+a real read, the real coordinate of its zero-sphere. The singleton identifies the component
+classes of any two representatives; it does not identify their reads, because no cocone,
+descent law, or invariance law for the read along the transports is established, and none can
+be in general: the class of A-sections contains $(q^{2}+1)\,\zetaO$, a member satisfying
+\textup{(C1)--(C4)} whose zero-spheres are centred at $0$ and at the real parts of the zeta
+zeros. The unrestricted concentricity theorem asserted in earlier versions of this paper is
+therefore false, and is withdrawn.
 
-Downstream corollaries translate residue-$\CC$ zeros to classically nontrivial zeros and, for
-$\zetaO$, use its functional equation to identify $c=\tfrac12$: the Riemann Hypothesis.
+What survives is exact and zeta-specific. Pairwise equality of the certified reads is the same
+proposition as concentricity of the enumerated zero-spheres, and for $\zetaO$ both are
+equivalent to the Riemann Hypothesis; under the Riemann Hypothesis the common centre and the
+common read are $\tfrac12$. These are geometric and categorical reformulations of the Riemann
+Hypothesis, formalized in Lean without placeholders. They are not a proof of it.
 \end{abstract}
 
 
@@ -173,13 +180,13 @@ $\zetaO$, use its functional equation to identify $c=\tfrac12$: the Riemann Hypo
 %=====================================================================
 \section*{Introduction}
 %=====================================================================
-The Riemann Hypothesis is usually met head-on, as a question about where the zeros of a single complex function fall along a line. This paper approaches it from the side. It asks instead whether a family of geometric objects, sitting a few dimensions up in the octonions, share a common centre, and shows that they must. The Riemann Hypothesis then follows, not as the thing we set out to prove, but as the shadow this larger fact casts back down onto the complex plane.
+The Riemann Hypothesis is usually met head-on, as a question about where the zeros of a single complex function fall along a line. This paper approaches it from the side. It asks instead whether a family of geometric objects, sitting a few dimensions up in the octonions, share a common centre. For the octonionic zeta that question is the Riemann Hypothesis itself, seen from the side: not a route around it, but the same fact cast a few dimensions up, where more of its structure is visible.
 
 A nontrivial zero of the zeta function, seen from the complex line alone, is a lone point in a strip. Seen from the compactified octonions, that same zero opens into a six-dimensional sphere, and the critical-line question becomes a question of arrangement: are these spheres concentric, or scattered into different hyperplanes? It takes the whole continuum of imaginary directions in the octonions, read together, to see whether the alignment holds.
 
-The paper is built to make that convergence visible and, at every step, checkable. Part 1 recalls the classical facts about the Riemann zeta function we will lean on. Part 2 develops the slice-preserving theory of functions on the octonions, builds the commutative ring $\mathcal R$ in which the octonionic zeta lives, and proves the reframing at the centre of everything: the classically nontrivial zeros are exactly the residue-$\CC$ zero six-spheres, and the Riemann Hypothesis holds precisely when those spheres are concentric. Part 3 proves the main result, the Concentricity Theorem, with a small piece of machinery I think of as a concentricity detector. From the section itself we build one distinguished action on a projective base, carry it across a continuum of Riemann spheres by orbit and stabilizer, and read off, through categorical homotopy theory, whether the zero-spheres land in a single connected piece. They do; and for the octonionic zeta, that is the Riemann Hypothesis.
+The paper is built to make that convergence visible and, at every step, checkable. Part 1 recalls the classical facts about the Riemann zeta function we will lean on. Part 2 develops the slice-preserving theory of functions on the octonions, builds the commutative ring $\mathcal R$ in which the octonionic zeta lives, and proves the reframing at the centre of everything: the classically nontrivial zeros are exactly the residue-$\CC$ zero six-spheres, and the Riemann Hypothesis holds precisely when those spheres are concentric. Part 3 builds a small piece of machinery I think of as a concentricity detector, and reports exactly what it detects. From the section itself we build one distinguished action on a projective base, carry it across a continuum of Riemann spheres by orbit and stabilizer, and read off, through categorical homotopy theory, that the zero-sphere states land in a single connected piece. That is proved. What it does not give is agreement of the real reads carried by those states: the class of sections considered contains a member whose zero-spheres are not concentric, so no argument at this generality can. For the octonionic zeta, agreement of the reads is equivalent to the Riemann Hypothesis, and under the Riemann Hypothesis the common centre is one half.
 
-No one can picture an eight-dimensional graph in their head, but tools from categorical homotopy theory, like the total-object Grothendieck construction and standard colimit arguments, let us probe this structure and reason about it. The argument is also formalized in Lean, so that each step can be checked; the reader can not only verify the steps but, I hope, come to understand for themselves why the Concentricity Theorem is true and why the Riemann Hypothesis follows.
+No one can picture an eight-dimensional graph in their head, but tools from categorical homotopy theory, like the total-object Grothendieck construction and standard colimit arguments, let us probe this structure and reason about it. The argument is also formalized in Lean, so that each step can be checked; the reader can verify each step, and see exactly where the connected component ends and the Riemann Hypothesis begins.
 
 %=====================================================================
 \part{Classical Background}
@@ -243,7 +250,6 @@ the nontrivial zeros of $\zeta$.
 \end{proof}
 
 \begin{theorem}[Hardy \cite{Hardy14}]\label{thm:hardy}
-\lean{zeta_criticalLine_zeros_infinite}
 Infinitely many nontrivial zeros of $\zeta$ lie on the line $\re s=\tfrac12$.
 \end{theorem}
 
@@ -258,10 +264,17 @@ Riemann sphere $\Cstar=\CC\cup\{\infty\}=S^2$ (the one-point compactification of
 \uses{thm:riemann}
 $\zetaC:\Cstar\to\Cstar$ is the meromorphic continuation of $\zeta$ regarded as a map to
 the Riemann sphere: $\zetaC(s)=\zeta(s)$ for $s\in\CC\setminus\{1\}$; $\zetaC(1)=\infty$
-(the simple pole, Theorem~\ref{thm:riemann}); and $\zetaC(\infty)=1$, since
-$\zeta(s)\to1$ as $\re(s)\to+\infty$ (the $p$-test: only the $n=1$ term of
-$\sum_n n^{-s}$ survives). It is holomorphic into $\Cstar$ on $\Cstar\setminus\{1\}$,
-its sole pole being $s=1$. The functional equation, the conjugate symmetry
+(the simple pole, Theorem~\ref{thm:riemann}); and $\zetaC(\infty)=1$, a \emph{conventional}
+value at the adjoined domain point, chosen because $\zeta(s)\to1$ as $\re(s)\to+\infty$ (only
+the $n=1$ term of $\sum_n n^{-s}$ survives). On the finite plane, $\zetaC$ is holomorphic into
+$\Cstar$ on $\CC\setminus\{1\}$, its sole pole being $s=1$. It is \emph{not} continuous at the
+domain point $\infty$, and no continuous extension exists there: $\zeta(-2n)=0$ for every
+$n\ge1$ while $\zeta(\sigma)\to1$ as $\sigma\to+\infty$, so $\zeta$ has no limit at $\infty$.
+Nothing downstream uses continuity at $\infty$: Definition~\ref{def:A-section} places its
+conditions on the finite plane and on a slice half-space, and treats the value at $N$ as
+assigned data. (Earlier versions of this definition asserted holomorphy on
+$\Cstar\setminus\{1\}$; that assertion was false and was withdrawn on 2026-09-02.) The
+functional equation, the conjugate symmetry
 $\zetaC(\bar s)=\overline{\zetaC(s)}$, and Hardy's infinitude (Theorem~\ref{thm:hardy}) hold
 verbatim for $\zetaC$, as they concern values on $\CC\setminus\{1\}$ where $\zetaC=\zeta$.
 \end{definition}
@@ -868,17 +881,22 @@ $\sigma_\rho=\tfrac12$; as $\rho$ was arbitrary this is RH, and the common centr
 \end{proof}
 
 %=====================================================================
-\part{The Categorical Construction and the Concentricity Theorem}\label{part:stack}
+\part{The Categorical Construction and the Concentricity Question}\label{part:stack}
 %=====================================================================
 
 Part 2 revealed that $\zeta$ carries a special geometry: spread onto the octonions, its zeros are
-concentric exactly when the Riemann Hypothesis holds. That raises the question this part answers.
+concentric exactly when the Riemann Hypothesis holds. That raises the question this part studies.
 What general properties of a section of the ring $\mathcal R$ of slice-preserving functions force
 its residue-$\CC$ zeros to be concentric? Following that question leads to four conditions,
 \textup{C1--C4}, and to the whole class of functions satisfying them, which we call the A-sections.
-The main result, the Concentricity Theorem, is that the residue-$\CC$ zeros of any A-section are
-concentric. The octonionic zeta is one A-section among many, and the Riemann Hypothesis is one of
-its corollaries.
+The answer this part now records is that \textup{C1--C4} do \emph{not} suffice: the class
+contains $(q^{2}+1)\,\zetaO$, whose zero-spheres are centred at $0$ and at the real parts of the
+zeta zeros (Proposition~\ref{prop:countermodel}). What the categorical construction proves for
+every A-section is that the residue-$\CC$ zero-sphere states form one connected total with a
+singleton component colimit (Theorem~\ref{thm:residue-total-singleton}); what it leaves open is
+whether the real reads of those states agree, and that is the concentricity question itself
+(Proposition~\ref{prop:read-equivalence}). For the octonionic zeta that question is the Riemann
+Hypothesis (Theorem~\ref{thm:zeta-concentricity-rh}).
 
 From the section's own data we read one distinguished exponential M\"obius transformation of the
 Riemann sphere, presented at its two fixed points by the Euler product and the Weierstrass product;
@@ -889,9 +907,10 @@ construction $\mathcal T_A=\int_{\mathcal B}\mathcal A_A$ gathers every state an
 value-transport into one total object. The zero-sphere system is the inverse-image subdiagram
 $\mathcal R_A$, included by $\iota_A:\mathcal R_A\Rightarrow\mathcal A_A$; the relative
 orbit--stabilizer comparison makes $\int_{\mathcal B}\mathcal R_A$ transitive and hence connected.
-The component colimit therefore collapses to a singleton, and its A-specific real-value readout is
-one centre $c\in\RR$. The concentricity proof takes place in this residue-$\CC$ inverse-image
-system inside the ambient total.
+The component colimit therefore collapses to a singleton. Each certified residue representative
+carries a real read, the real coordinate of its zero-sphere; whether all those reads coincide is
+not decided by the singleton, and Section~\ref{sec:detector} says exactly what is and is not
+established.
 
 \section{The geometric worlds and the categorical construction}\label{sec:tower-stack}
 
@@ -983,8 +1002,9 @@ Condition \textup{C4}, infinitely many residue-$\CC$ zeros, matches the class to
 infinite structure (the infinite Euler family of \textup{C2}, the infinite Weierstrass divisor of
 \textup{C3}) and gives the collapse its force: the degenerate fibre of the transport is an
 infinite family, so that whether it lies in one connected component of $\mathcal T_A$
-(Definition~\ref{def:base}) is an infinite alignment, decided by
-Theorem~\ref{thm:concentricity}.
+(Definition~\ref{def:base}) is an infinite alignment. Theorem~\ref{thm:residue-total-singleton}
+decides the component question affirmatively for the C-residue total; the alignment of the real
+reads is the separate question of Proposition~\ref{prop:read-equivalence}.
 
 \subsection*{Two geometric viewpoints}
 
@@ -1462,8 +1482,9 @@ factorization that gives condition C3 its meaning, and the fact that a residue-$
 $6$-sphere, a single connected component of the octonionic world. Then the categorical engine,
 Riehl's computation of the components of a Grothendieck construction as a colimit, which sorts the
 assembled total into the classes linked by the section's real-value transports. With these in hand
-we define an A-section by its four conditions C1--C4, state and prove the Concentricity Theorem, and
-record the corollary that carries its conclusion back into the language of classical zeros.
+we define an A-section by its four conditions C1--C4, prove that the C-residue total of any
+A-section is transitive with a singleton component colimit, identify exactly what that singleton
+does and does not give, and exhibit an A-section whose zero-spheres are not concentric.
 
 \begin{proposition}[Slice-regular Weierstrass factorization; the content of C3]\label{prop:weierstrass}
 \lean{weierstrassE, spherePrimary, ASection.c3_multipliable,
@@ -1541,8 +1562,11 @@ slice-regular functions on $\OO^{*}=S^8$ \textup{(Definition~\ref{def:R})} with 
 four properties.
 \begin{enumerate}[label=\textup{(C\arabic*)},leftmargin=3.2em]
 \item \emph{Meromorphic continuation; single simple pole.} $A$ is meromorphically continued to
-  $\OO^{*}$ with exactly one pole; it is simple, lies at a real point, and its value there is the
-  point at infinity $\infty=N$.
+  $\OO^{*}\setminus\{N\}$ with exactly one pole; it is simple, lies at a real point, and its
+  value there is the point at infinity $\infty=N$. At the domain point $N$ the section carries
+  an assigned value in the target sphere, a real point or $\infty$, as data; no continuity or
+  meromorphy at $N$ is required, and none holds for $\zetaO$
+  \textup{(}Definition~\ref{def:zeta-Cstar}\textup{)}.
 \item \emph{Infinite Euler product.} On a slice right half-space $\Omega_0\subset\OO^{*}$,
   $A=\exp\!\big(\sum_p\ell_p\big)$ for an \emph{infinite} family $\{\ell_p\}$ of
   slice-preserving slice-regular functions each zero-free on $\Omega_0$, the family summable
@@ -1905,28 +1929,32 @@ step. The comparison above rests on the relative stabilizer cancellation
 through the single common source tape and north frame.
 \end{proof}
 
-\begin{theorem}[Concentricity]\label{thm:concentricity}
-\lean{ASection.concentricity, ASection.residueTotal_isConnected,
+\begin{theorem}[Transitivity and the singleton component of the C-residue total]\label{thm:residue-total-singleton}
+\lean{ASection.sweepTransitive_on_residueSystem, ASection.residueTotal_isConnected,
 ASection.residueTotal_pi0_singleton,
 ASection.residueTotal_pi0_colimit_singleton,
-ASection.residueTotal_transportLevel_singleton,
 ASection.residueInputTotalTransportRead_certified,
+ASection.transportLevel_eq_sphereZero_re,
 ASection.transportLevel, ASection.residueActionState_mem}
 \leanok
 \uses{def:A-section, def:base, def:residue-subdiagram, lem:c-residue-transitive,
 lem:residue-spheres, lem:pi0-grothendieck,
 thm:G2-S6, thm:winding-lift, prop:winding-signature, thm:identity}
-Let $A$ be an $A$-section. The infinitely many C-residue zero $S^6$ spheres transported by the A-section functor
-$\mathcal A_A:\mathcal B\to\mathbf{Grpd}$, from the projective great-circle base
-$\mathcal B$ to the A-generated normalized value groupoids, form exactly one
-colimit/component class, and that
-singleton class
-carries one real value
-\[
-  c\in\RR.
-\]
-Consequently every populated residue-$\CC$ zero $6$-sphere has centre $c$, so the infinitely
-many populated residue-$\CC$ zero spheres are concentric.
+Let $A$ be an $A$-section, and let $\int_{\mathcal B}\mathcal R_A$ be the total of its C-residue
+inverse-image system, whose objects are the infinitely many C-residue zero-sphere states
+transported by the A-section functor $\mathcal A_A:\mathcal B\to\mathbf{Grpd}$ from the
+projective great-circle base $\mathcal B$ to the A-generated normalized value groupoids.
+\begin{enumerate}[leftmargin=2.4em]
+\item[(i)] $\int_{\mathcal B}\mathcal R_A$ is transitive: any two of its objects are joined by
+  a morphism. Hence it is connected.
+\item[(ii)] Its set of connected components is a singleton, and so is its component colimit
+  $\operatorname*{colim}_{\mathcal B}(\pi_0\circ\mathcal R_A)$.
+\item[(iii)] Every certified residue representative carries a real read, the real coordinate of
+  its zero-sphere: $\operatorname{transportLevel}_A(n)=\re\bigl(A.\operatorname{sphereZero}(n)\bigr)$.
+\end{enumerate}
+The singleton in (ii) identifies the component classes of the representatives in (iii). It does
+not identify their reads; see the end of the proof, Proposition~\ref{prop:read-equivalence}, and
+Proposition~\ref{prop:countermodel}.
 \end{theorem}
 \begin{proof}
 We consider a slice-preserving section $A$ of the ring $\mathcal R$ on the compactified
@@ -2105,36 +2133,89 @@ established. Therefore, by Lemma~\ref{lem:pi0-grothendieck}
 \[
 \pi_0\Bigl(\int_{\mathcal B}\mathcal R_A\Bigr)\;\cong\;\operatorname*{colim}_{\mathcal B}\,(\pi_0\circ\mathcal R_A)
 \]
-collapses to a singleton $\kappa$. Here $\operatorname{val}$ is exactly the A-specific
-instantiation of that singleton equality at certified residue representatives. Their real
-coordinate is definitionally the project's level read
-\[
-  \operatorname{transportLevel}_A(n)
-  =\operatorname{Re}\bigl(A.\operatorname{sphereZero}(n)\bigr).
-\]
-Instantiating the singleton equality at the $n$-th and $0$-th certified representatives is itself
-the $\operatorname{val}$ step:
-\[
-  \operatorname{transportLevel}_A(n)=\operatorname{transportLevel}_A(0).
-\]
-The proof then sets $c=\operatorname{transportLevel}_A(0)$. Every populated residue-$\CC$ zero
-$6$-sphere has real centre $c$, so the infinitely many residue-$\CC$ zero spheres of the A-section
-are concentric.
+collapses to a singleton $\kappa$. This proves (i) and (ii).
+
+For (iii): the $n$-th certified residue representative is the state of the $n$-th enumerated
+zero-sphere at the north frame, carried along the fixed tape; its positioned coordinate is the
+sphere parameter $q_n=A.\operatorname{sphereZero}(n)$, and the read
+$\operatorname{transportLevel}_A(n)$ is by definition the real part of that coordinate
+\textup{(}\texttt{residueInputTotalTransportRead\_certified},
+\texttt{transportLevel\_eq\_sphereZero\_re}\textup{)}.
+
+This is where the argument stops. The singleton $\kappa$ identifies the component classes of any
+two certified representatives. It does not identify their reads: two objects of one component
+are joined by a zigzag of transports of $\int_{\mathcal B}\mathcal R_A$, and no cocone, descent
+law, or invariance law for the read along those transports is established. Equality of the reads
+is the concentricity statement itself \textup{(}Proposition~\ref{prop:read-equivalence}\textup{)},
+and it fails for the A-section of Proposition~\ref{prop:countermodel}, so no such law can hold
+at this generality. Earlier versions of this theorem concluded from $\kappa$ that all reads
+equal one value $c$ and that the zero-spheres are concentric; that step was never accepted by
+Lean, and its conclusion is false. It was withdrawn on 2026-09-02.
 \end{proof}
 
-\begin{corollary}[Translation to the classical framework]\label{cor:nontrivial}
-\lean{ASection.nontrivial_one_centre}
-\uses{thm:concentricity, thm:zero-equivalence, thm:zero-spheres, lem:residue-spheres}
-Under the residue-$\CC$/classically-nontrivial-zero identification, the already-proved
-populated residue-$\CC$ zero spheres are the classically nontrivial zero spheres and retain the
-common centre $c$ supplied by Theorem~\ref{thm:concentricity}.
-\end{corollary}
+\begin{proposition}[The read equivalence]\label{prop:read-equivalence}
+\lean{ConcentricASection, PairwiseTransportLevel,
+concentricASection_iff_pairwiseTransportLevel}
+\leanok
+\uses{def:A-section, def:residue-subdiagram, thm:residue-total-singleton}
+For an A-section $A$ the following are equivalent:
+\begin{enumerate}[leftmargin=2.4em]
+\item[(a)] the enumerated residue-$\CC$ zero-spheres $\{q_n\}$ share one real centre: there is
+  $c\in\RR$ with $\re q_n=c$ for every $n$;
+\item[(b)] any two certified residue representatives carry the same real read:
+  $\operatorname{transportLevel}_A(n)=\operatorname{transportLevel}_A(m)$ for all $n,m$.
+\end{enumerate}
+\end{proposition}
 \begin{proof}
-This is the translation of the C-residue population through
-Theorems~\ref{thm:zero-equivalence} and~\ref{thm:zero-spheres}. The centre comes directly from
-Theorem~\ref{thm:concentricity}, while \textup{C4} and Lemma~\ref{lem:residue-spheres} supply
-infinitude and disjointness.
+By Theorem~\ref{thm:residue-total-singleton}(iii), $\operatorname{transportLevel}_A(n)=\re q_n$
+for every $n$. If (a) holds, both reads in (b) equal $c$. If (b) holds, every $\re q_n$ equals
+$\re q_0$, so $c=\re q_0$ witnesses (a).
 \end{proof}
+
+\begin{proposition}[An A-section whose zero-spheres are not concentric]\label{prop:countermodel}
+\lean{SpecCandidate.candidateSection, SpecCandidate.candidateSection_not_concentric,
+SpecCandidate.current_ASection_concentricity_type_false,
+SpecCandidate.candidateSection_not_pairwiseTransportLevel}
+\leanok
+\uses{def:A-section, cor:zeta-section, thm:zero-spheres, prop:weierstrass, prop:read-equivalence}
+Let $A=(q^{2}+1)\,\zetaO$, the octonionic zeta multiplied by the slice-regular primary factor of
+the zero-sphere through $i$. Then $A$ satisfies \textup{(C1)--(C4)}: the pole is at $1$; the
+Euler family of $\zetaO$, indexed by the primes, is augmented by a second infinite family,
+indexed by $\mathbb{N}$, of geometric scalings $\tfrac12\,2^{-n}\,\ell$ of one slice-preserving
+logarithm $\ell$ of $q^{2}+1$, each zero-free and slice regular on the half-space $\re q>1$ and
+summing there to $\ell$; the real Weierstrass factor and the entire factor are those of
+$\zetaO$; and the residue-$\CC$ zero-spheres are enumerated by $q_0=i$, $q_{n+1}=\rho_n$, where
+$\{\rho_n\}$ enumerates the upper-half-plane zeros of $\zeta$. Its zero-spheres are not
+concentric: $\re q_0=0$, while $0<\re\rho_n<1$ for every $n$. Consequently the statement
+``the residue-$\CC$ zero-spheres of every A-section are concentric'' is false, and by
+Proposition~\ref{prop:read-equivalence} the certified reads of $A$ are not pairwise equal.
+\end{proposition}
+\begin{proof}
+Every clause of Definition~\ref{def:A-section}, in the form formalized as the structure
+\texttt{ASection}, is discharged in \texttt{Concentricity/SpecCandidate.lean}: the factor
+$q^{2}+1$ is slice preserving and entire with the single zero-sphere through $i$; the
+conjugate-symmetrized principal logarithm $\ell$ of $q^{2}+1$ agrees with the principal logarithm
+on $\re q>1$, where it is zero-free and analytic, so its geometric scalings are zero-free, analytic,
+and summable alongside the Euler logarithms of $\zeta$, with a local-normal majorant; the product
+$(q-1)A$ has the stated full factorization,
+with the convergence of Proposition~\ref{prop:weierstrass}; and the enumeration is infinite
+because the zeta enumeration is. The real parts are $0$ for $q_0$ and, for the inherited zeros,
+strictly between $0$ and $1$ by the open-strip theorem (Theorem~\ref{thm:riemann}, as formalized
+in \texttt{nontrivialZero\_re\_mem\_Ioo}). The point $i$ is not a zero of $\zeta$, so it is a
+genuine additional zero-sphere of $A$.
+\end{proof}
+
+\begin{remark}[Translation to the classical framework]\label{rmk:nontrivial}
+Under the residue-$\CC$/classically-nontrivial-zero identification
+\textup{(}Theorems~\ref{thm:zero-equivalence} and~\ref{thm:zero-spheres}\textup{)}, the
+populated residue-$\CC$ zero spheres of an A-section are its classically nontrivial zero spheres,
+infinite and pairwise disjoint by \textup{C4} and Lemma~\ref{lem:residue-spheres}. Whether they
+share a common centre is condition (a) of Proposition~\ref{prop:read-equivalence}; it is not
+supplied by Theorem~\ref{thm:residue-total-singleton}, and it fails for the A-section of
+Proposition~\ref{prop:countermodel}. Earlier versions of this paper stated an unconditional
+corollary here, carrying a common centre supplied by the former universal theorem; it was
+withdrawn on 2026-09-02.
+\end{remark}
 
 % The superseded great-circle/F-based proof frame was removed from the active
 % master on 2026-07-17. It remains recoverable from git history and is not an
@@ -2142,12 +2223,13 @@ infinitude and disjointness.
 
 \section{Corollaries}\label{sec:verification}
 
-Two corollaries close the argument. The first checks that the octonionic zeta is an A-section,
-verifying its four conditions C1--C4 one by one against the classical facts of Part~1; the
-Concentricity Theorem then applies to it directly, and its residue-$\CC$ zero-spheres share one real
-centre $c$. The second corollary is the Riemann Hypothesis. The functional equation of $\xi$ now
-pins that centre: it sends a zero of real part $c$ to one of real part $1-c$, and applied to the
-common centre it forces $c=1-c$, so $c=\tfrac12$. Every nontrivial zero lies on the critical line.
+Two results close the argument. The first checks that the octonionic zeta is an A-section,
+verifying its four conditions C1--C4 one by one against the classical facts of Part~1, so that
+Theorem~\ref{thm:residue-total-singleton} applies to it. The second says exactly what
+concentricity means for it: its residue-$\CC$ zero-spheres share one real centre if and only if
+the Riemann Hypothesis holds, the same is true of the certified reads, and under the Riemann
+Hypothesis the common centre is $\tfrac12$, pinned by the functional equation of $\xi$ through
+Theorem~\ref{thm:rh-equiv}.
 
 \begin{corollary}[$\zetaO$ is an $A$-section]\label{cor:zeta-section}
 \lean{zetaSection}
@@ -2182,7 +2264,7 @@ slice-regular zero-geometry that translates them:
 \end{itemize}
 After the \textup{(C1)--(C4)} verification, the downstream centre-pinning uses the
 \emph{functional equation} $\xi(s)=\xi(1-s)$,
-$\xi(\bar s)=\overline{\xi(s)}$ (Theorem~\ref{thm:riemann}), used in Corollary~\ref{cor:rh}. The
+$\xi(\bar s)=\overline{\xi(s)}$ (Theorem~\ref{thm:riemann}), used in Theorem~\ref{thm:zeta-concentricity-rh}. The
 \emph{residue dictionary}, a closed zero of $\zetaO$ is a real point (residue field $\RR$, the
 classically \emph{trivial} zeros) or a $6$-sphere $S_{(\sigma,\gamma)}$ (residue field $\CC$, the
 classically \emph{nontrivial} zeros), is the slice-regular zero-geometry of
@@ -2190,32 +2272,58 @@ Theorem~\ref{thm:zero-spheres} and \cite{AdF}; it is what makes ``residue-$\CC$'
 ``nontrivial'' the same notion. Thus \textup{(C1)--(C4)} hold.
 \end{proof}
 
-\begin{corollary}[Riemann Hypothesis]\label{cor:rh}
-\lean{zeta_riemannHypothesis, zeta_criticalLine_zeros_infinite}
+\begin{theorem}[Concentricity of $\zetaO$ is the Riemann Hypothesis]\label{thm:zeta-concentricity-rh}
+\lean{zetaSection_concentric_iff_RH, zetaSection_pairwiseTransportLevel_iff_RH,
+zetaSection_sphereZero_re_eq_half_of_RH, zetaSection_transportLevel_eq_half_of_RH,
+zeta_criticalLine_zeros_infinite_of_RH}
 \leanok
-\uses{cor:zeta-section, thm:concentricity, cor:nontrivial, thm:rh-equiv}
-Every nontrivial zero of the classical Riemann zeta function has real part $\tfrac12$; in
-particular infinitely many zeros lie on the line $\Re s=\tfrac12$.
-\end{corollary}
+\uses{cor:zeta-section, thm:rh-equiv, prop:read-equivalence, thm:residue-total-singleton,
+thm:zero-spheres, cor:hadamard-infinitude}
+For the A-section $\zetaO$ of Corollary~\ref{cor:zeta-section}:
+\begin{enumerate}[leftmargin=2.4em]
+\item[(a)] the enumerated residue-$\CC$ zero-spheres $\{q_n\}$ share one real centre if and only
+  if the Riemann Hypothesis holds;
+\item[(b)] the certified reads $\operatorname{transportLevel}_{\zetaO}(n)$ are pairwise equal if
+  and only if the Riemann Hypothesis holds;
+\item[(c)] under the Riemann Hypothesis, every $q_n$ has real part $\tfrac12$, every read
+  $\operatorname{transportLevel}_{\zetaO}(n)$ equals $\tfrac12$, and infinitely many zeros of
+  $\zeta$ lie on the line $\Re s=\tfrac12$.
+\end{enumerate}
+\end{theorem}
 \begin{proof}
-By Corollary~\ref{cor:zeta-section}, $\zetaO$ satisfies \textup{(C1)--(C4)}. By
-Theorem~\ref{thm:concentricity}, its populated residue-$\CC$ value-transport colimit is the real
-singleton $\{c\}$ and its residue-$\CC$ zero spheres are already concentric about $c$. By
-Corollary~\ref{cor:nontrivial}, these are
-the classically nontrivial zeros, so every nontrivial zero has real part $c$. The functional
-equation $\xi(s)=\xi(1-s)$ (Theorem~\ref{thm:riemann}) sends a zero of real part $c$ to one of
-real part $1-c$; applied to the \emph{common} centre it forces $c=1-c$, whence $c=\tfrac12$ (this
-is Theorem~\ref{thm:rh-equiv} read on $\zetaO$). Therefore every nontrivial zero has real part
-$\tfrac12$, and by \textup{(C4)} infinitely many lie on $\Re s=\tfrac12$.
+(a) The enumeration $\{q_n\}$ of Corollary~\ref{cor:zeta-section} is complete: every zero of
+$\zeta$ in the upper half-plane is some $q_n$
+\textup{(}\texttt{zetaSphereZero\_surjective}\textup{)}, and every $q_n$ is such a zero. Hence a
+common real centre for $\{q_n\}$ is the same as a common real part for all upper-half-plane
+zeros of $\zeta$, which is equivalent to the Riemann Hypothesis by Theorem~\ref{thm:rh-equiv}.
+(b) follows from (a) and Proposition~\ref{prop:read-equivalence}. (c) Under the Riemann
+Hypothesis the common centre of Theorem~\ref{thm:rh-equiv} is $\tfrac12$; it is $\re q_n$ and,
+by Theorem~\ref{thm:residue-total-singleton}(iii), the read. The infinitude clause is
+Corollary~\ref{cor:hadamard-infinitude} restricted to the line.
 \end{proof}
+
+\begin{remark}[What this theorem is]\label{rmk:reframing}
+Theorem~\ref{thm:zeta-concentricity-rh} is a geometric and categorical reformulation of the
+Riemann Hypothesis, formalized without placeholders. It is not a proof of the Riemann Hypothesis,
+and nothing in this paper or its formalization proves the Riemann Hypothesis. Clause (b) shows
+that the pairwise read equality which the singleton component of
+Theorem~\ref{thm:residue-total-singleton} does not supply is, for $\zetaO$, of exactly the
+strength of the Riemann Hypothesis: a categorical proof of it would be a proof of the Riemann
+Hypothesis. Earlier versions of this paper stated the Riemann Hypothesis here as an
+unconditional corollary of a universal concentricity theorem; that theorem is false
+\textup{(}Proposition~\ref{prop:countermodel}\textup{)} and the corollary was withdrawn on
+2026-09-02. Hardy's theorem (Theorem~\ref{thm:hardy}) remains a cited classical fact and is not
+formalized.
+\end{remark}
 
 A word on why the argument takes the shape it does. No one can hold an $8$-dimensional graph in the
 mind's eye, or draw the continuum of Riemann spheres the section lives on. The epigraph names the
 way through: no single viewpoint sees the whole, but when the viewpoints are multiplied and
 conjugated, a vision appears that none of them held alone. Each slice direction is one such
 viewpoint; the value-bearing A-section functor gathers all of them over the base, the total object holds them
-together, and the colimit conjugates them into a single answer. The concentricity we could not
-picture becomes one component we can compute.
+together, and the colimit conjugates them into a single component. Whether that component's
+real reads agree is the concentricity question itself: the component we can compute, the
+agreement we cannot, and for the octonionic zeta the agreement is the Riemann Hypothesis.
 
 \begin{remark}[The image span of a fully faithful inclusion]\label{rmk:image-span}
 For any fully faithful functor $F:\mathcal C\to\mathcal D$ there is a canonical roof through
@@ -2229,12 +2337,12 @@ the image,
 the backward leg being an isomorphism of categories onto the image and the forward leg the
 canonical inclusion. It is a general fact, available here for $\iota_A$ and for
 $\int\iota_A$, and it is the shape a length-two zigzag argument would use.
-Theorem~\ref{thm:concentricity} obtains connectedness directly from transitivity at the total,
+Theorem~\ref{thm:residue-total-singleton} obtains connectedness directly from transitivity at the total,
 by a single element. The image span records the corresponding length-two alternative.
 \end{remark}
 
 \begin{remark}[Two alternative routes]\label{rmk:thomason}
-Two other proofs of Theorem~\ref{thm:concentricity} are available. The first runs over the
+Two other proofs of Theorem~\ref{thm:residue-total-singleton} are available. The first runs over the
 base. The restriction sits over $\mathcal B$ through its two projections,
 \[
 \begin{tikzcd}[column sep=large]

@@ -93,36 +93,6 @@
 
 
     
-    <div class="dep-modal-container" id="cor:nontrivial_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="cor:nontrivial" style="display: none">
-    <div class="thm_thmheading">
-      <span class="corollary_thmcaption">
-      Corollary
-      </span>
-      <span class="corollary_thmlabel">10.8</span><span class="corollary_thmtitle">Translation to the classical framework</span></div>
-    <div class="thm_thmcontent"><p>   Under the residue-\(\mathbb {C}\)/classically-nontrivial-zero identification, the already-proved populated residue-\(\mathbb {C}\) zero spheres are the classically nontrivial zero spheres and retain the common centre \(c\) supplied by Theorem&#160;<a href="part-stack.html#thm:concentricity">10.7</a>. </p>
-</div>
-
-    <a class="latex_link" href="part-stack.html#cor:nontrivial">LaTeX</a>
-    
-    
-  <a class="lean_link lean_decl" href="/find/#doc/ASection.nontrivial_one_centre">Lean</a>
-    
-    
-  
-    
-  </div>
-    
-      </div>
-    </div>
-
-
-    
     <div class="dep-modal-container" id="cor:powers_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
@@ -142,45 +112,6 @@
     
     
   
-    
-    
-  
-    
-  </div>
-    
-      </div>
-    </div>
-
-
-    
-    <div class="dep-modal-container" id="cor:rh_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="cor:rh" style="display: none">
-    <div class="thm_thmheading">
-      <span class="corollary_thmcaption">
-      Corollary
-      </span>
-      <span class="corollary_thmlabel">11.2</span><span class="corollary_thmtitle">Riemann Hypothesis</span></div>
-    <div class="thm_thmcontent"><p>   Every nontrivial zero of the classical Riemann zeta function has real part \(\tfrac 12\); in particular infinitely many zeros lie on the line \(\Re s=\tfrac 12\). </p>
-</div>
-
-    <a class="latex_link" href="part-stack.html#cor:rh">LaTeX</a>
-    
-    
-  <div class="tooltip">
-      <span class="lean_link">Lean</span>
-      <ul class="tooltip_list">
-        
-           <li><a href="/find/#doc/zeta_riemannHypothesis" class="lean_decl">zeta_riemannHypothesis</a></li>
-        
-           <li><a href="/find/#doc/zeta_criticalLine_zeros_infinite" class="lean_decl">zeta_criticalLine_zeros_infinite</a></li>
-        
-      </ul>
-  </div>
     
     
   
@@ -236,7 +167,7 @@
       <span class="definition_thmlabel">10.4</span><span class="definition_thmtitle">\(A\)-sections</span></div>
     <div class="thm_thmcontent"><p>   An <em>\(A\)-section</em> is a section \(A\) of the ring \(\mathcal R\) of slice-preserving slice-regular functions on \(\mathbb {O}^{*}=S^8\) <span class="upshape">(Definition&#160;<a href="sect0002.html#def:R">5.1</a>)</span> with the following four properties. </p>
 <ol class="enumerate">
-  <li><p><em>Meromorphic continuation; single simple pole.</em> \(A\) is meromorphically continued to \(\mathbb {O}^{*}\) with exactly one pole; it is simple, lies at a real point, and its value there is the point at infinity \(\infty =N\). </p>
+  <li><p><em>Meromorphic continuation; single simple pole.</em> \(A\) is meromorphically continued to \(\mathbb {O}^{*}\setminus \{ N\} \) with exactly one pole; it is simple, lies at a real point, and its value there is the point at infinity \(\infty =N\). At the domain point \(N\) the section carries an assigned value in the target sphere, a real point or \(\infty \), as data; no continuity or meromorphy at \(N\) is required, and none holds for \(\zeta _{\mathbb {O}^{*}}\) <span class="upshape">(</span>Definition&#160;<a href="sect0001.html#def:zeta-Cstar">1.6</a><span class="upshape">)</span>. </p>
 </li>
   <li><p><em>Infinite Euler product.</em> On a slice right half-space \(\Omega _0\subset \mathbb {O}^{*}\), \(A=\exp \! \big(\sum _p\ell _p\big)\) for an <em>infinite</em> family \(\{ \ell _p\} \) of slice-preserving slice-regular functions each zero-free on \(\Omega _0\), the family summable <em>locally normally</em> on \(\Omega _0\) <span class="upshape">(</span>the sense in which the cited Euler products converge; Theorem&#160;<a href="sect0001.html#thm:euler">1.2</a><span class="upshape">)</span>; in particular \(A\) is zero-free on \(\Omega _0\). </p>
 </li>
@@ -937,7 +868,7 @@
       Definition
       </span>
       <span class="definition_thmlabel">1.6</span><span class="definition_thmtitle">Compactified classical zeta</span></div>
-    <div class="thm_thmcontent"><p>   \(\zeta _{\mathbb {C}^{*}}:\mathbb {C}^{*}\to \mathbb {C}^{*}\) is the meromorphic continuation of \(\zeta \) regarded as a map to the Riemann sphere: \(\zeta _{\mathbb {C}^{*}}(s)=\zeta (s)\) for \(s\in \mathbb {C}\setminus \{ 1\} \); \(\zeta _{\mathbb {C}^{*}}(1)=\infty \) (the simple pole, Theorem&#160;<a href="sect0001.html#thm:riemann">1.1</a>); and \(\zeta _{\mathbb {C}^{*}}(\infty )=1\), since \(\zeta (s)\to 1\) as \(\operatorname{Re}(s)\to +\infty \) (the \(p\)-test: only the \(n=1\) term of \(\sum _n n^{-s}\) survives). It is holomorphic into \(\mathbb {C}^{*}\) on \(\mathbb {C}^{*}\setminus \{ 1\} \), its sole pole being \(s=1\). The functional equation, the conjugate symmetry \(\zeta _{\mathbb {C}^{*}}(\bar s)=\overline{\zeta _{\mathbb {C}^{*}}(s)}\), and Hardy’s infinitude (Theorem&#160;<a href="sect0001.html#thm:hardy">1.5</a>) hold verbatim for \(\zeta _{\mathbb {C}^{*}}\), as they concern values on \(\mathbb {C}\setminus \{ 1\} \) where \(\zeta _{\mathbb {C}^{*}}=\zeta \). </p>
+    <div class="thm_thmcontent"><p>   \(\zeta _{\mathbb {C}^{*}}:\mathbb {C}^{*}\to \mathbb {C}^{*}\) is the meromorphic continuation of \(\zeta \) regarded as a map to the Riemann sphere: \(\zeta _{\mathbb {C}^{*}}(s)=\zeta (s)\) for \(s\in \mathbb {C}\setminus \{ 1\} \); \(\zeta _{\mathbb {C}^{*}}(1)=\infty \) (the simple pole, Theorem&#160;<a href="sect0001.html#thm:riemann">1.1</a>); and \(\zeta _{\mathbb {C}^{*}}(\infty )=1\), a <em>conventional</em> value at the adjoined domain point, chosen because \(\zeta (s)\to 1\) as \(\operatorname{Re}(s)\to +\infty \) (only the \(n=1\) term of \(\sum _n n^{-s}\) survives). On the finite plane, \(\zeta _{\mathbb {C}^{*}}\) is holomorphic into \(\mathbb {C}^{*}\) on \(\mathbb {C}\setminus \{ 1\} \), its sole pole being \(s=1\). It is <em>not</em> continuous at the domain point \(\infty \), and no continuous extension exists there: \(\zeta (-2n)=0\) for every \(n\ge 1\) while \(\zeta (\sigma )\to 1\) as \(\sigma \to +\infty \), so \(\zeta \) has no limit at \(\infty \). Nothing downstream uses continuity at \(\infty \): Definition&#160;<a href="part-stack.html#def:A-section">10.4</a> places its conditions on the finite plane and on a slice half-space, and treats the value at \(N\) as assigned data. (Earlier versions of this definition asserted holomorphy on \(\mathbb {C}^{*}\setminus \{ 1\} \); that assertion was false and was withdrawn on 2026-09-02.) The functional equation, the conjugate symmetry \(\zeta _{\mathbb {C}^{*}}(\bar s)=\overline{\zeta _{\mathbb {C}^{*}}(s)}\), and Hardy’s infinitude (Theorem&#160;<a href="sect0001.html#thm:hardy">1.5</a>) hold verbatim for \(\zeta _{\mathbb {C}^{*}}\), as they concern values on \(\mathbb {C}\setminus \{ 1\} \) where \(\zeta _{\mathbb {C}^{*}}=\zeta \). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#def:zeta-Cstar">LaTeX</a>
@@ -1645,6 +1576,49 @@
 
 
     
+    <div class="dep-modal-container" id="prop:countermodel_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:countermodel" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">10.9</span><span class="proposition_thmtitle">An A-section whose zero-spheres are not concentric</span></div>
+    <div class="thm_thmcontent"><p>   Let \(A=(q^{2}+1)\, \zeta _{\mathbb {O}^{*}}\), the octonionic zeta multiplied by the slice-regular primary factor of the zero-sphere through \(i\). Then \(A\) satisfies <span class="upshape">(C1)–(C4)</span>: the pole is at \(1\); the Euler family of \(\zeta _{\mathbb {O}^{*}}\), indexed by the primes, is augmented by a second infinite family, indexed by \(\mathbb {N}\), of geometric scalings \(\tfrac 12\, 2^{-n}\, \ell \) of one slice-preserving logarithm \(\ell \) of \(q^{2}+1\), each zero-free and slice regular on the half-space \(\operatorname{Re}q{\gt}1\) and summing there to \(\ell \); the real Weierstrass factor and the entire factor are those of \(\zeta _{\mathbb {O}^{*}}\); and the residue-\(\mathbb {C}\) zero-spheres are enumerated by \(q_0=i\), \(q_{n+1}=\rho _n\), where \(\{ \rho _n\} \) enumerates the upper-half-plane zeros of \(\zeta \). Its zero-spheres are not concentric: \(\operatorname{Re}q_0=0\), while \(0{\lt}\operatorname{Re}\rho _n{\lt}1\) for every \(n\). Consequently the statement “the residue-\(\mathbb {C}\) zero-spheres of every A-section are concentric” is false, and by Proposition&#160;<a href="part-stack.html#prop:read-equivalence">10.8</a> the certified reads of \(A\) are not pairwise equal. </p>
+</div>
+
+    <a class="latex_link" href="part-stack.html#prop:countermodel">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="/find/#doc/SpecCandidate.candidateSection" class="lean_decl">SpecCandidate.candidateSection</a></li>
+        
+           <li><a href="/find/#doc/SpecCandidate.candidateSection_not_concentric" class="lean_decl">SpecCandidate.candidateSection_not_concentric</a></li>
+        
+           <li><a href="/find/#doc/SpecCandidate.current_ASection_concentricity_type_false" class="lean_decl">SpecCandidate.current_ASection_concentricity_type_false</a></li>
+        
+           <li><a href="/find/#doc/SpecCandidate.candidateSection_not_pairwiseTransportLevel" class="lean_decl">SpecCandidate.candidateSection_not_pairwiseTransportLevel</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
     <div class="dep-modal-container" id="prop:R-comm-ring_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
@@ -1694,6 +1668,53 @@
     
     
   <a class="lean_link lean_decl" href="/find/#doc/StemRing.eq_zero_or_eq_zero_of_mul_eq_zero">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="prop:read-equivalence_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="prop:read-equivalence" style="display: none">
+    <div class="thm_thmheading">
+      <span class="proposition_thmcaption">
+      Proposition
+      </span>
+      <span class="proposition_thmlabel">10.8</span><span class="proposition_thmtitle">The read equivalence</span></div>
+    <div class="thm_thmcontent"><p>   For an A-section \(A\) the following are equivalent: </p>
+<ol class="enumerate">
+  <li><p>the enumerated residue-\(\mathbb {C}\) zero-spheres \(\{ q_n\} \) share one real centre: there is \(c\in \mathbb {R}\) with \(\operatorname{Re}q_n=c\) for every \(n\); </p>
+</li>
+  <li><p>any two certified residue representatives carry the same real read: \(\operatorname {transportLevel}_A(n)=\operatorname {transportLevel}_A(m)\) for all \(n,m\). </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="part-stack.html#prop:read-equivalence">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="/find/#doc/ConcentricASection" class="lean_decl">ConcentricASection</a></li>
+        
+           <li><a href="/find/#doc/PairwiseTransportLevel" class="lean_decl">PairwiseTransportLevel</a></li>
+        
+           <li><a href="/find/#doc/concentricASection_iff_pairwiseTransportLevel" class="lean_decl">concentricASection_iff_pairwiseTransportLevel</a></li>
+        
+      </ul>
+  </div>
     
     
   
@@ -1899,61 +1920,6 @@
     
     
   
-    
-    
-  
-    
-  </div>
-    
-      </div>
-    </div>
-
-
-    
-    <div class="dep-modal-container" id="thm:concentricity_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="thm:concentricity" style="display: none">
-    <div class="thm_thmheading">
-      <span class="theorem_thmcaption">
-      Theorem
-      </span>
-      <span class="theorem_thmlabel">10.7</span><span class="theorem_thmtitle">Concentricity</span></div>
-    <div class="thm_thmcontent"><p>   Let \(A\) be an \(A\)-section. The infinitely many C-residue zero \(S^6\) spheres transported by the A-section functor \(\mathcal A_A:\mathcal B\to \mathbf{Grpd}\), from the projective great-circle base \(\mathcal B\) to the A-generated normalized value groupoids, form exactly one colimit/component class, and that singleton class carries one real value </p>
-<div class="displaymath" id="a0000000108">
-  \[  c\in \mathbb {R}.  \]
-</div>
-<p> Consequently every populated residue-\(\mathbb {C}\) zero \(6\)-sphere has centre \(c\), so the infinitely many populated residue-\(\mathbb {C}\) zero spheres are concentric. </p>
-</div>
-
-    <a class="latex_link" href="part-stack.html#thm:concentricity">LaTeX</a>
-    
-    
-  <div class="tooltip">
-      <span class="lean_link">Lean</span>
-      <ul class="tooltip_list">
-        
-           <li><a href="/find/#doc/ASection.concentricity" class="lean_decl">ASection.concentricity</a></li>
-        
-           <li><a href="/find/#doc/ASection.residueTotal_isConnected" class="lean_decl">ASection.residueTotal_isConnected</a></li>
-        
-           <li><a href="/find/#doc/ASection.residueTotal_pi0_singleton" class="lean_decl">ASection.residueTotal_pi0_singleton</a></li>
-        
-           <li><a href="/find/#doc/ASection.residueTotal_pi0_colimit_singleton" class="lean_decl">ASection.residueTotal_pi0_colimit_singleton</a></li>
-        
-           <li><a href="/find/#doc/ASection.residueTotal_transportLevel_singleton" class="lean_decl">ASection.residueTotal_transportLevel_singleton</a></li>
-        
-           <li><a href="/find/#doc/ASection.residueInputTotalTransportRead_certified" class="lean_decl">ASection.residueInputTotalTransportRead_certified</a></li>
-        
-           <li><a href="/find/#doc/ASection.transportLevel" class="lean_decl">ASection.transportLevel</a></li>
-        
-           <li><a href="/find/#doc/ASection.residueActionState_mem" class="lean_decl">ASection.residueActionState_mem</a></li>
-        
-      </ul>
-  </div>
     
     
   
@@ -2193,13 +2159,13 @@
 	<a href="part-stack.html#Hardy14" >11</a>
 	]
 </span></span></div>
-    <div class="thm_thmcontent"><p>  Infinitely many nontrivial zeros of \(\zeta \) lie on the line \(\operatorname{Re}s=\tfrac 12\). </p>
+    <div class="thm_thmcontent"><p> Infinitely many nontrivial zeros of \(\zeta \) lie on the line \(\operatorname{Re}s=\tfrac 12\). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#thm:hardy">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="/find/#doc/zeta_criticalLine_zeros_infinite">Lean</a>
+  
     
     
   
@@ -2350,6 +2316,66 @@
     
     
   
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="thm:residue-total-singleton_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:residue-total-singleton" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">10.7</span><span class="theorem_thmtitle">Transitivity and the singleton component of the C-residue total</span></div>
+    <div class="thm_thmcontent"><p>   Let \(A\) be an \(A\)-section, and let \(\int _{\mathcal B}\mathcal R_A\) be the total of its C-residue inverse-image system, whose objects are the infinitely many C-residue zero-sphere states transported by the A-section functor \(\mathcal A_A:\mathcal B\to \mathbf{Grpd}\) from the projective great-circle base \(\mathcal B\) to the A-generated normalized value groupoids. </p>
+<ol class="enumerate">
+  <li><p>\(\int _{\mathcal B}\mathcal R_A\) is transitive: any two of its objects are joined by a morphism. Hence it is connected. </p>
+</li>
+  <li><p>Its set of connected components is a singleton, and so is its component colimit \(\operatorname *{colim}_{\mathcal B}(\pi _0\circ \mathcal R_A)\). </p>
+</li>
+  <li><p>Every certified residue representative carries a real read, the real coordinate of its zero-sphere: \(\operatorname {transportLevel}_A(n)=\operatorname{Re}\bigl(A.\operatorname {sphereZero}(n)\bigr)\). </p>
+</li>
+</ol>
+<p> The singleton in (ii) identifies the component classes of the representatives in (iii). It does not identify their reads; see the end of the proof, Proposition&#160;<a href="part-stack.html#prop:read-equivalence">10.8</a>, and Proposition&#160;<a href="part-stack.html#prop:countermodel">10.9</a>. </p>
+</div>
+
+    <a class="latex_link" href="part-stack.html#thm:residue-total-singleton">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="/find/#doc/ASection.sweepTransitive_on_residueSystem" class="lean_decl">ASection.sweepTransitive_on_residueSystem</a></li>
+        
+           <li><a href="/find/#doc/ASection.residueTotal_isConnected" class="lean_decl">ASection.residueTotal_isConnected</a></li>
+        
+           <li><a href="/find/#doc/ASection.residueTotal_pi0_singleton" class="lean_decl">ASection.residueTotal_pi0_singleton</a></li>
+        
+           <li><a href="/find/#doc/ASection.residueTotal_pi0_colimit_singleton" class="lean_decl">ASection.residueTotal_pi0_colimit_singleton</a></li>
+        
+           <li><a href="/find/#doc/ASection.residueInputTotalTransportRead_certified" class="lean_decl">ASection.residueInputTotalTransportRead_certified</a></li>
+        
+           <li><a href="/find/#doc/ASection.transportLevel_eq_sphereZero_re" class="lean_decl">ASection.transportLevel_eq_sphereZero_re</a></li>
+        
+           <li><a href="/find/#doc/ASection.transportLevel" class="lean_decl">ASection.transportLevel</a></li>
+        
+           <li><a href="/find/#doc/ASection.residueActionState_mem" class="lean_decl">ASection.residueActionState_mem</a></li>
+        
+      </ul>
+  </div>
     
     
   
@@ -2785,6 +2811,59 @@
 
 
     
+    <div class="dep-modal-container" id="thm:zeta-concentricity-rh_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="thm:zeta-concentricity-rh" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">11.2</span><span class="theorem_thmtitle">Concentricity of \(\zeta _{\mathbb {O}^{*}}\) is the Riemann Hypothesis</span></div>
+    <div class="thm_thmcontent"><p>   For the A-section \(\zeta _{\mathbb {O}^{*}}\) of Corollary&#160;<a href="part-stack.html#cor:zeta-section">11.1</a>: </p>
+<ol class="enumerate">
+  <li><p>the enumerated residue-\(\mathbb {C}\) zero-spheres \(\{ q_n\} \) share one real centre if and only if the Riemann Hypothesis holds; </p>
+</li>
+  <li><p>the certified reads \(\operatorname {transportLevel}_{\zeta _{\mathbb {O}^{*}}}(n)\) are pairwise equal if and only if the Riemann Hypothesis holds; </p>
+</li>
+  <li><p>under the Riemann Hypothesis, every \(q_n\) has real part \(\tfrac 12\), every read \(\operatorname {transportLevel}_{\zeta _{\mathbb {O}^{*}}}(n)\) equals \(\tfrac 12\), and infinitely many zeros of \(\zeta \) lie on the line \(\Re s=\tfrac 12\). </p>
+</li>
+</ol>
+</div>
+
+    <a class="latex_link" href="part-stack.html#thm:zeta-concentricity-rh">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="/find/#doc/zetaSection_concentric_iff_RH" class="lean_decl">zetaSection_concentric_iff_RH</a></li>
+        
+           <li><a href="/find/#doc/zetaSection_pairwiseTransportLevel_iff_RH" class="lean_decl">zetaSection_pairwiseTransportLevel_iff_RH</a></li>
+        
+           <li><a href="/find/#doc/zetaSection_sphereZero_re_eq_half_of_RH" class="lean_decl">zetaSection_sphereZero_re_eq_half_of_RH</a></li>
+        
+           <li><a href="/find/#doc/zetaSection_transportLevel_eq_half_of_RH" class="lean_decl">zetaSection_transportLevel_eq_half_of_RH</a></li>
+        
+           <li><a href="/find/#doc/zeta_criticalLine_zeros_infinite_of_RH" class="lean_decl">zeta_criticalLine_zeros_infinite_of_RH</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
     <div class="dep-modal-container" id="thm:zeta-in-R_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
@@ -2831,7 +2910,7 @@ graphContainer.graphviz({useWorker: true})
     .width(width)
     .height(height)
     .fit(true)
-    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"lem:zero-Cstar"	[label="zero-Cstar",		shape=ellipse];	"thm:zero-equivalence"	[label="zero-equivalence",		shape=ellipse];	"lem:zero-Cstar" -> "thm:zero-equivalence"	[style=dashed];	"thm:zero-spheres"	[label="zero-spheres",		shape=ellipse];	"thm:zero-equivalence" -> "thm:zero-spheres"	[style=dashed];	"cor:nontrivial"	[label=nontrivial,		shape=ellipse];	"thm:zero-spheres" -> "cor:nontrivial"	[style=dashed];	"thm:rh-equiv"	[label="rh-equiv",		shape=ellipse];	"thm:zero-spheres" -> "thm:rh-equiv"	[style=dashed];	"cor:zeta-section"	[label="zeta-section",		shape=ellipse];	"thm:zero-spheres" -> "cor:zeta-section"	[style=dashed];	"lem:exp-degenerate"	[label="exp-degenerate",		shape=ellipse];	"eq:residue-total-base-arrow"	[color=green,		label="residue-total-base-arrow",		shape=ellipse];	"thm:concentricity"	[color=green,		label=concentricity,		shape=ellipse];	"eq:residue-total-base-arrow" -> "thm:concentricity"	[style=dashed];	"thm:concentricity" -> "cor:nontrivial"	[style=dashed];	"cor:rh"	[color=green,		label=rh,		shape=ellipse];	"cor:nontrivial" -> "cor:rh"	[style=dashed];	"prop:R-domain"	[label="R-domain",		shape=ellipse];	"thm:riemann"	[color=blue,		label=riemann,		shape=ellipse];	"def:zeta-Cstar"	[label="zeta-Cstar",		shape=box];	"thm:riemann" -> "def:zeta-Cstar"	[style=dashed];	"def:zeta-Cstar" -> "lem:zero-Cstar"	[style=dashed];	"def:zeta_O"	[label=zeta_O,		shape=box];	"def:zeta-Cstar" -> "def:zeta_O"	[style=dashed];	"thm:rh-equiv" -> "cor:rh"	[style=dashed];	"prop:well-defined"	[label="well-defined",		shape=ellipse];	"thm:zeta-in-R"	[label="zeta-in-R",		shape=ellipse];	"prop:well-defined" -> "thm:zeta-in-R"	[style=dashed];	"thm:zeta-in-R" -> "cor:zeta-section"	[style=dashed];	"cor:zeta-section" -> "cor:rh"	[style=dashed];	"def:zeta_O" -> "prop:well-defined"	[style=dashed];	"thm:slice-pres"	[label="slice-pres",		shape=ellipse];	"def:zeta_O" -> "thm:slice-pres"	[style=dashed];	"thm:G2-equiv"	[label="G2-equiv",		shape=ellipse];	"def:zeta_O" -> "thm:G2-equiv"	[style=dashed];	"thm:slice-exp"	[label="slice-exp",		shape=ellipse];	"thm:log-manifold"	[label="log-manifold",		shape=ellipse];	"thm:slice-exp" -> "thm:log-manifold"	[style=dashed];	"thm:log-manifold" -> "lem:exp-degenerate"	[style=dashed];	"thm:winding-lift"	[label="winding-lift",		shape=ellipse];	"thm:log-manifold" -> "thm:winding-lift"	[style=dashed];	"prop:winding-signature"	[label="winding-signature",		shape=ellipse];	"thm:winding-lift" -> "prop:winding-signature"	[style=dashed];	"eq:orbit-stabilizer"	[label="orbit-stabilizer",		shape=box];	"prop:winding-signature" -> "eq:orbit-stabilizer"	[style=dashed];	"def:residue-subdiagram"	[label="residue-subdiagram",		shape=box];	"eq:orbit-stabilizer" -> "def:residue-subdiagram"	[style=dashed];	"lem:pi0-grothendieck"	[label="pi0-grothendieck",		shape=ellipse];	"eq:orbit-stabilizer" -> "lem:pi0-grothendieck"	[style=dashed];	"def:residue-subdiagram" -> "eq:residue-total-base-arrow"	[style=dashed];	"lem:pi0-grothendieck" -> "thm:concentricity"	[style=dashed];	"def:slice-regular"	[label="slice-regular",		shape=box];	"thm:rep-formula"	[label="rep-formula",		shape=ellipse];	"def:slice-regular" -> "thm:rep-formula"	[style=dashed];	"thm:extension"	[label=extension,		shape=ellipse];	"def:slice-regular" -> "thm:extension"	[style=dashed];	"thm:identity"	[label=identity,		shape=ellipse];	"def:slice-regular" -> "thm:identity"	[style=dashed];	"def:slice-preserving"	[label="slice-preserving",		shape=box];	"thm:rep-formula" -> "def:slice-preserving"	[style=dashed];	"thm:extension" -> "def:zeta_O"	[style=dashed];	"thm:identity" -> "thm:concentricity"	[style=dashed];	"thm:identity" -> "prop:R-domain"	[style=dashed];	"prop:R-comm-ring"	[label="R-comm-ring",		shape=ellipse];	"thm:identity" -> "prop:R-comm-ring"	[style=dashed];	"def:slice-preserving" -> "thm:slice-exp"	[style=dashed];	"def:section-map"	[label="section-map",		shape=box];	"def:slice-preserving" -> "def:section-map"	[style=dashed];	"def:slice-preserving" -> "thm:slice-pres"	[style=dashed];	"def:R"	[label=R,		shape=box];	"def:slice-preserving" -> "def:R"	[style=dashed];	"thm:slice-pres" -> "thm:zero-equivalence"	[style=dashed];	"thm:slice-pres" -> "thm:zeta-in-R"	[style=dashed];	"def:R" -> "thm:zeta-in-R"	[style=dashed];	"prop:weierstrass"	[label=weierstrass,		shape=ellipse];	"def:R" -> "prop:weierstrass"	[style=dashed];	"thm:wang"	[label=wang,		shape=ellipse];	"def:R" -> "thm:wang"	[style=dashed];	"def:slice-squares"	[color=blue,		fillcolor="#A3D6FF",		label="slice-squares",		shape=box,		style=filled];	"def:slice-squares" -> "def:section-map"	[style=dashed];	"def:G2"	[color=blue,		fillcolor="#A3D6FF",		label=G2,		shape=box,		style=filled];	"def:G2" -> "thm:G2-equiv"	[style=dashed];	"def:two-worlds"	[label="two-worlds",		shape=box];	"def:G2" -> "def:two-worlds"	[style=dashed];	"thm:G2-equiv" -> "thm:zero-spheres"	[style=dashed];	"lem:residue-spheres"	[label="residue-spheres",		shape=ellipse];	"def:two-worlds" -> "lem:residue-spheres"	[style=dashed];	"def:A-section"	[label="A-section",		shape=box];	"lem:residue-spheres" -> "def:A-section"	[style=dashed];	"thm:euler"	[color=blue,		label=euler,		shape=ellipse];	"thm:euler" -> "cor:zeta-section"	[style=dashed];	"prop:weierstrass" -> "def:A-section"	[style=dashed];	"def:A-section" -> "cor:zeta-section"	[style=dashed];	"def:A-section" -> "eq:orbit-stabilizer"	[style=dashed];	"thm:wang" -> "prop:R-domain"	[style=dashed];	"thm:wang" -> "prop:R-comm-ring"	[style=dashed];	"thm:wang" -> "lem:residue-spheres"	[style=dashed];	"cor:powers"	[label=powers,		shape=ellipse];	"cor:powers" -> "thm:slice-exp"	[style=dashed];	"def:octonions"	[color=blue,		fillcolor="#A3D6FF",		label=octonions,		shape=box,		style=filled];	"def:slices"	[label=slices,		shape=box];	"def:octonions" -> "def:slices"	[style=dashed];	"def:slices" -> "def:slice-regular"	[style=dashed];	"def:slices" -> "def:two-worlds"	[style=dashed];	"thm:hadamard"	[color=blue,		label=hadamard,		shape=ellipse];	"cor:hadamard-infinitude"	[label="hadamard-infinitude",		shape=ellipse];	"thm:hadamard" -> "cor:hadamard-infinitude"	[style=dashed];	"cor:hadamard-infinitude" -> "thm:zero-spheres"	[style=dashed];	"thm:G2-S6"	[color=blue,		label="G2-S6",		shape=ellipse];	"thm:G2-S6" -> "thm:zero-spheres"	[style=dashed];	"thm:G2-S6" -> "def:two-worlds"	[style=dashed];	"def:carrier"	[color=blue,		fillcolor="#A3D6FF",		label=carrier,		shape=box,		style=filled];	"def:carrier" -> "def:two-worlds"	[style=dashed];	"thm:hardy"	[color=blue,		label=hardy,		shape=ellipse];	"thm:artin"	[color=blue,		label=artin,		shape=ellipse];	"thm:artin" -> "thm:wang"	[style=dashed];	"thm:artin" -> "cor:powers"	[style=dashed];}`)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"thm:extension"	[label=extension,		shape=ellipse];	"def:zeta_O"	[label=zeta_O,		shape=box];	"thm:extension" -> "def:zeta_O"	[style=dashed];	"thm:slice-pres"	[label="slice-pres",		shape=ellipse];	"def:zeta_O" -> "thm:slice-pres"	[style=dashed];	"thm:G2-equiv"	[label="G2-equiv",		shape=ellipse];	"def:zeta_O" -> "thm:G2-equiv"	[style=dashed];	"prop:well-defined"	[label="well-defined",		shape=ellipse];	"def:zeta_O" -> "prop:well-defined"	[style=dashed];	"thm:zeta-in-R"	[label="zeta-in-R",		shape=ellipse];	"thm:slice-pres" -> "thm:zeta-in-R"	[style=dashed];	"thm:zero-equivalence"	[label="zero-equivalence",		shape=ellipse];	"thm:slice-pres" -> "thm:zero-equivalence"	[style=dashed];	"thm:zero-spheres"	[label="zero-spheres",		shape=ellipse];	"thm:G2-equiv" -> "thm:zero-spheres"	[style=dashed];	"prop:well-defined" -> "thm:zeta-in-R"	[style=dashed];	"cor:zeta-section"	[label="zeta-section",		shape=ellipse];	"thm:zeta-in-R" -> "cor:zeta-section"	[style=dashed];	"thm:zeta-concentricity-rh"	[color=green,		label="zeta-concentricity-rh",		shape=ellipse];	"cor:zeta-section" -> "thm:zeta-concentricity-rh"	[style=dashed];	"prop:countermodel"	[color=green,		label=countermodel,		shape=ellipse];	"cor:zeta-section" -> "prop:countermodel"	[style=dashed];	"prop:read-equivalence"	[color=green,		label="read-equivalence",		shape=ellipse];	"prop:read-equivalence" -> "thm:zeta-concentricity-rh"	[style=dashed];	"prop:read-equivalence" -> "prop:countermodel"	[style=dashed];	"prop:winding-signature"	[label="winding-signature",		shape=ellipse];	"eq:orbit-stabilizer"	[label="orbit-stabilizer",		shape=box];	"prop:winding-signature" -> "eq:orbit-stabilizer"	[style=dashed];	"def:residue-subdiagram"	[label="residue-subdiagram",		shape=box];	"eq:orbit-stabilizer" -> "def:residue-subdiagram"	[style=dashed];	"lem:pi0-grothendieck"	[label="pi0-grothendieck",		shape=ellipse];	"eq:orbit-stabilizer" -> "lem:pi0-grothendieck"	[style=dashed];	"thm:residue-total-singleton"	[color=green,		label="residue-total-singleton",		shape=ellipse];	"thm:residue-total-singleton" -> "prop:read-equivalence"	[style=dashed];	"eq:residue-total-base-arrow"	[color=green,		label="residue-total-base-arrow",		shape=ellipse];	"def:residue-subdiagram" -> "eq:residue-total-base-arrow"	[style=dashed];	"lem:pi0-grothendieck" -> "thm:residue-total-singleton"	[style=dashed];	"def:section-map"	[label="section-map",		shape=box];	"eq:residue-total-base-arrow" -> "thm:residue-total-singleton"	[style=dashed];	"lem:zero-Cstar"	[label="zero-Cstar",		shape=ellipse];	"lem:zero-Cstar" -> "thm:zero-equivalence"	[style=dashed];	"thm:zero-equivalence" -> "thm:zero-spheres"	[style=dashed];	"thm:zero-spheres" -> "cor:zeta-section"	[style=dashed];	"thm:rh-equiv"	[label="rh-equiv",		shape=ellipse];	"thm:zero-spheres" -> "thm:rh-equiv"	[style=dashed];	"lem:exp-degenerate"	[label="exp-degenerate",		shape=ellipse];	"def:slices"	[label=slices,		shape=box];	"def:slice-regular"	[label="slice-regular",		shape=box];	"def:slices" -> "def:slice-regular"	[style=dashed];	"def:two-worlds"	[label="two-worlds",		shape=box];	"def:slices" -> "def:two-worlds"	[style=dashed];	"def:slice-regular" -> "thm:extension"	[style=dashed];	"thm:rep-formula"	[label="rep-formula",		shape=ellipse];	"def:slice-regular" -> "thm:rep-formula"	[style=dashed];	"thm:identity"	[label=identity,		shape=ellipse];	"def:slice-regular" -> "thm:identity"	[style=dashed];	"lem:residue-spheres"	[label="residue-spheres",		shape=ellipse];	"def:two-worlds" -> "lem:residue-spheres"	[style=dashed];	"def:slice-preserving"	[label="slice-preserving",		shape=box];	"thm:rep-formula" -> "def:slice-preserving"	[style=dashed];	"thm:identity" -> "thm:residue-total-singleton"	[style=dashed];	"prop:R-domain"	[label="R-domain",		shape=ellipse];	"thm:identity" -> "prop:R-domain"	[style=dashed];	"prop:R-comm-ring"	[label="R-comm-ring",		shape=ellipse];	"thm:identity" -> "prop:R-comm-ring"	[style=dashed];	"def:A-section"	[label="A-section",		shape=box];	"lem:residue-spheres" -> "def:A-section"	[style=dashed];	"def:R"	[label=R,		shape=box];	"def:R" -> "thm:zeta-in-R"	[style=dashed];	"thm:wang"	[label=wang,		shape=ellipse];	"def:R" -> "thm:wang"	[style=dashed];	"prop:weierstrass"	[label=weierstrass,		shape=ellipse];	"def:R" -> "prop:weierstrass"	[style=dashed];	"thm:wang" -> "lem:residue-spheres"	[style=dashed];	"thm:wang" -> "prop:R-domain"	[style=dashed];	"thm:wang" -> "prop:R-comm-ring"	[style=dashed];	"prop:weierstrass" -> "def:A-section"	[style=dashed];	"def:slice-preserving" -> "thm:slice-pres"	[style=dashed];	"def:slice-preserving" -> "def:section-map"	[style=dashed];	"def:slice-preserving" -> "def:R"	[style=dashed];	"thm:slice-exp"	[label="slice-exp",		shape=ellipse];	"def:slice-preserving" -> "thm:slice-exp"	[style=dashed];	"thm:log-manifold"	[label="log-manifold",		shape=ellipse];	"thm:slice-exp" -> "thm:log-manifold"	[style=dashed];	"thm:log-manifold" -> "lem:exp-degenerate"	[style=dashed];	"thm:winding-lift"	[label="winding-lift",		shape=ellipse];	"thm:log-manifold" -> "thm:winding-lift"	[style=dashed];	"def:octonions"	[color=blue,		fillcolor="#A3D6FF",		label=octonions,		shape=box,		style=filled];	"def:octonions" -> "def:slices"	[style=dashed];	"def:slice-squares"	[color=blue,		fillcolor="#A3D6FF",		label="slice-squares",		shape=box,		style=filled];	"def:slice-squares" -> "def:section-map"	[style=dashed];	"thm:hadamard"	[color=blue,		label=hadamard,		shape=ellipse];	"cor:hadamard-infinitude"	[label="hadamard-infinitude",		shape=ellipse];	"thm:hadamard" -> "cor:hadamard-infinitude"	[style=dashed];	"cor:hadamard-infinitude" -> "thm:zero-spheres"	[style=dashed];	"thm:artin"	[color=blue,		label=artin,		shape=ellipse];	"thm:artin" -> "thm:wang"	[style=dashed];	"cor:powers"	[label=powers,		shape=ellipse];	"thm:artin" -> "cor:powers"	[style=dashed];	"cor:powers" -> "thm:slice-exp"	[style=dashed];	"thm:riemann"	[color=blue,		label=riemann,		shape=ellipse];	"def:zeta-Cstar"	[label="zeta-Cstar",		shape=box];	"thm:riemann" -> "def:zeta-Cstar"	[style=dashed];	"def:zeta-Cstar" -> "def:zeta_O"	[style=dashed];	"def:zeta-Cstar" -> "lem:zero-Cstar"	[style=dashed];	"thm:rh-equiv" -> "thm:zeta-concentricity-rh"	[style=dashed];	"def:A-section" -> "cor:zeta-section"	[style=dashed];	"def:A-section" -> "eq:orbit-stabilizer"	[style=dashed];	"thm:G2-S6"	[color=blue,		label="G2-S6",		shape=ellipse];	"thm:G2-S6" -> "thm:zero-spheres"	[style=dashed];	"thm:G2-S6" -> "def:two-worlds"	[style=dashed];	"thm:winding-lift" -> "prop:winding-signature"	[style=dashed];	"def:G2"	[color=blue,		fillcolor="#A3D6FF",		label=G2,		shape=box,		style=filled];	"def:G2" -> "thm:G2-equiv"	[style=dashed];	"def:G2" -> "def:two-worlds"	[style=dashed];	"def:carrier"	[color=blue,		fillcolor="#A3D6FF",		label=carrier,		shape=box,		style=filled];	"def:carrier" -> "def:two-worlds"	[style=dashed];	"thm:hardy"	[color=blue,		label=hardy,		shape=ellipse];	"thm:euler"	[color=blue,		label=euler,		shape=ellipse];	"thm:euler" -> "cor:zeta-section"	[style=dashed];}`)
     .on("end", interactive);
 
 latexLabelEscaper = function(label) {

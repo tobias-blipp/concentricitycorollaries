@@ -26,3 +26,4 @@ import Concentricity.ProjectiveCone
 import Concentricity.ProjectiveTransport
 import Concentricity.ASectionActionDiagram
 import Concentricity.Corollaries
+import Concentricity.SpecCandidate

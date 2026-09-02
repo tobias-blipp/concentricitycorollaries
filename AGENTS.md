@@ -1,5 +1,65 @@
 # Concentricity collaboration protocol
 
+## STATUS 2026-09-02: production synchronized to the zeta-specific replacement surface
+
+This section supersedes the endgame queue, the locked transitivity handoff,
+the collapse register, and the Seat 2 checkpoint below wherever they
+conflict.  The companion analysis repository (Concentricity-Analysis,
+iterations 05-09, TASK-0001 through TASK-0005) established, and this
+synchronization installed:
+
+- The universal proposition `∀ A : ASection, ∃ c, ∀ n, (A.sphereZero n).re = c`
+  is FALSE at the exact `ASection` type.  `Concentricity/SpecCandidate.lean`
+  builds the field-complete A-section with stem `(z^2 + 1) * riemannZeta z`,
+  whose enumerated zero-spheres are centred at `0` and at the real parts of
+  the zeta zeros (`SpecCandidate.current_ASection_concentricity_type_false`).
+- `ASection.concentricity` and the one admitted read equality it consumed
+  (`ASection.residueTotal_transportLevel_singleton`, formerly
+  Theorem.lean:1009, the repository's only `sorry`) were withdrawn.  The
+  repository now contains zero sorries.
+- The clean structural results remain in `Concentricity/Theorem.lean`:
+  transitivity and connectedness of the C-residue total, its singleton
+  `π₀`, its singleton component colimit, and the exact read interface
+  `concentricASection_iff_pairwiseTransportLevel`.
+- For `zetaSection`, common centres and pairwise certified-read equality are
+  each equivalent to `RiemannHypothesis`; under RH both values are `1/2`
+  (`Concentricity/Corollaries.lean`: `zetaSection_concentric_iff_RH`,
+  `zetaSection_pairwiseTransportLevel_iff_RH`,
+  `zetaSection_sphereZero_re_eq_half_of_RH`,
+  `zetaSection_transportLevel_eq_half_of_RH`,
+  `zeta_criticalLine_zeros_infinite_of_RH`).  Expected axiom surface for all
+  of them: `[propext, Classical.choice, Quot.sound]`.
+
+Consequences for anyone working here:
+
+- Do not restore `ASection.concentricity`, the admitted `hkn`, an
+  unconditional `zeta_riemannHypothesis`, or any theorem deriving RH from
+  the singleton component.  Seat 2 is closed negatively, not open: the read
+  equality it was meant to supply is refuted in general and is RH-equivalent
+  for zeta.
+- The master `Octonionic_RH_master.tex` was synchronized on the same date:
+  `thm:residue-total-singleton` (formerly `thm:concentricity`),
+  `prop:read-equivalence`, `prop:countermodel`, `rmk:nontrivial` (formerly
+  `cor:nontrivial`), `thm:zeta-concentricity-rh` (formerly `cor:rh`),
+  `rmk:reframing`; the abstract, introduction, Part 3 overview, C1, and
+  `def:zeta-Cstar` were corrected accordingly.
+- Generated ledgers, certificate tables, and the blueprint site dated before
+  2026-09-02 (`Ledger.md`, `CertificationLedger.md`,
+  `BlueprintLeanCertificateTable.md`, `DependencyTabulation.md`,
+  `MasterLeanFaithfulness.md`, `RelevantGreenFinal.md`, `blueprint/`,
+  `docs/`) describe the pre-synchronization tree.  Regenerate them from the
+  current sources before citing them.
+- `verify.sh` step 4 now prints the headline statements and axioms of the
+  new surface.  `Concentricity/_GateConcentricityAudit.lean` prints the same
+  receipts.
+- Retained open analytic question (analysis OQ-008): a precise
+  punctured-domain replacement for the compactified-zeta narrative.  The
+  master's `def:zeta-Cstar` and C1 received a minimal correction only
+  (no continuity at the domain point at infinity is claimed or used).
+
+The historical sections below are retained verbatim as provenance of the
+2026-07-31 endgame.  Read them as history, not as an active queue.
+
 ## Read first: the no-transfer rule and the 2026-07-31 failure
 
 Difficulty belongs to discovering or proving an inference.  It does not
