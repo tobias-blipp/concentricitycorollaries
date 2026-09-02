@@ -920,12 +920,12 @@ END
 
 CLAIM [def:residue-subdiagram] The {residue locus} of an A-section is $\{z : A(z)=0,\ {Im}z>0\}$ {(} {CResidueZeroLocus} 
 CERTIFIEDAT ASection.CResidueInputWorld
-OBJECT CResidueZeroLocus
+OBJECT CResidueInputWorld
 END
 
 CLAIM [def:residue-subdiagram] The {residue locus} of an A-section is $\{z : A(z)=0,\ {Im}z>0\}$ {(} {CResidueZeroLocus} 
 CERTIFIEDAT ASection.AsectionCResidueInputDiagram
-OBJECT CResidueZeroLocus
+OBJECT AsectionCResidueInputDiagram
 END
 
 CLAIM [def:residue-subdiagram] The {residue locus} of an A-section is $\{z : A(z)=0,\ {Im}z>0\}$ {(} {CResidueZeroLocus} 
@@ -955,7 +955,7 @@ END
 
 CLAIM [def:residue-subdiagram] The {residue locus} of an A-section is $\{z : A(z)=0,\ {Im}z>0\}$ {(} {CResidueZeroLocus} 
 CERTIFIEDAT ASection.residueTotalCategory
-OBJECT CResidueZeroLocus
+OBJECT residueTotalCategory
 END
 
 CLAIM [def:residue-subdiagram] The {residue locus} of an A-section is $\{z : A(z)=0,\ {Im}z>0\}$ {(} {CResidueZeroLocus} 

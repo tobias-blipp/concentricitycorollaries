@@ -61,8 +61,9 @@ structure ASection where
   meromorphic : MeromorphicOn F Set.univ
   /-- C1 data: the pole's location — "it … lies at a real point". -/
   pole : ℝ
-  /-- C1: "A is meromorphically continued to 𝕆* with exactly one pole" —
-  analytic away from the pole. -/
+  /-- C1: "A is meromorphically continued to 𝕆* ∖ {N} with exactly one pole"
+  (master wording corrected 2026-09-02; the stem is analytic on ℂ away from
+  the pole, and nothing is required at the domain point at infinity). -/
   c1_analyticAt : ∀ z : ℂ, z ≠ (pole : ℂ) → AnalyticAt ℂ F z
   /-- C1: "it is simple" — meromorphic order exactly −1 at the pole. (The
   clause "its value there is the point at infinity ∞ = N" is the compactified

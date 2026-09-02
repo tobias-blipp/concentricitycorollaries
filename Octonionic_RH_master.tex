@@ -613,13 +613,15 @@ A slice-preserving section $A$ carries each slice Riemann sphere into itself,
 \[
   A(\CC_v^{*})\subseteq\CC_v^{*}=S^2_v\qquad(v\in S^6),
 \]
-so its restriction to a slice is a holomorphic self-map of that slice sphere,
+so its restriction to a slice is a self-map of that slice sphere,
 \[
   A_v:=\varphi_v^{-1}\circ A\circ\varphi_v:\ \Cstar\longrightarrow\Cstar,
 \]
-through the identification $\varphi_v:\Cstar\xrightarrow{\sim}\CC_v^{*}$ of
-Definition~\ref{def:slices}. The \emph{$I$-independent lift} is the fact that this holomorphic stem is
-the \emph{same} for every $v$: there is one holomorphic $A_\circ:\Cstar\to\Cstar$ with
+holomorphic on the finite slice plane away from its poles, with the value at the domain point
+$\infty$ assigned as in Definition~\ref{def:R}, through the identification
+$\varphi_v:\Cstar\xrightarrow{\sim}\CC_v^{*}$ of Definition~\ref{def:slices}. The
+\emph{$I$-independent lift} is the fact that this stem is the \emph{same} for every $v$: there is
+one $A_\circ:\Cstar\to\Cstar$, holomorphic on $\CC$ away from its poles, with
 \[
   A|_{\CC_v^{*}}=\varphi_v\circ A_\circ\circ\varphi_v^{-1}\qquad\text{for all }v\in S^6
 \]
@@ -1657,6 +1659,19 @@ Its inclusion $\iota_A:\mathcal R_A\Rightarrow\mathcal A_A$
 to its ambient state and is the identity on arrows; it is fibrewise fully
 faithful onto that inverse image, and its naturality squares retain the ambient
 A-section transport itself.
+
+The Lean source realizes the same inverse image on its \emph{semantic input groupoid}
+$\mathcal I_A$ \textup{(}\texttt{CResidueInputWorld}\textup{)}: its objects are the M\"obius
+input states whose image under the distinguished disk action lies in the residue locus, and its
+arrows are the native M\"obius input transports. The C-residue diagram on that base,
+$\mathcal R_A^{\mathrm{in}}:\mathcal I_A\to\mathbf{Grpd}$
+\textup{(}\texttt{AsectionCResidueInputDiagram}\textup{)}, has as fibres the witnessed states over
+each input, and its Grothendieck total $\int_{\mathcal I_A}\mathcal R_A^{\mathrm{in}}$
+\textup{(}\texttt{residueTotalCategory}\textup{)} is the object about which transitivity,
+connectedness, and the singleton component are proved. Throughout Part~3, the notation
+$\int_{\mathcal B}\mathcal R_A$ for the C-residue total refers to this total; the projective-frame
+presentation over $\mathcal B$ is retained in the source only for the componentwise inclusion
+certificates of $\iota_A$.
 \end{definition}
 
 \begin{lemma}[Transitivity of the C-residue total]\label{lem:c-residue-transitive}
@@ -1961,9 +1976,9 @@ thm:G2-S6, thm:winding-lift, prop:winding-signature, thm:identity}
 Let $A$ be an $A$-section, and let $\int_{\mathcal B}\mathcal R_A$ be the total of its C-residue
 inverse-image system, whose objects are the infinitely many C-residue zero-sphere states
 transported by the A-section functor $\mathcal A_A:\mathcal B\to\mathbf{Grpd}$ from the
-projective great-circle base $\mathcal B$ to the A-generated normalized value groupoids. As in
-Definition~\ref{def:residue-subdiagram}, $\int_{\mathcal B}\mathcal R_A$ is realized in the
-Lean source as the total of the semantic C-residue input diagram over its input groupoid
+projective great-circle base $\mathcal B$ to the A-generated normalized value groupoids. As
+fixed in Definition~\ref{def:residue-subdiagram}, $\int_{\mathcal B}\mathcal R_A$ denotes the
+total $\int_{\mathcal I_A}\mathcal R_A^{\mathrm{in}}$ of the semantic C-residue input diagram
 \textup{(}\texttt{residueTotalCategory}\textup{)}; the statements below are about that total.
 \begin{enumerate}[leftmargin=2.4em]
 \item[(i)] $\int_{\mathcal B}\mathcal R_A$ is transitive: any two of its objects are joined by
